@@ -1,1 +1,689 @@
-test
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jose "Joey" Diaz — Enterprise Endpoint & Mobility Architect</title>
+<meta name="description" content="Jose 'Joey' Diaz — enterprise Apple &amp; mobility architect, end-user advocate, and self-taught builder. I make technology disappear in service of the people who use it.">
+<!--
+  Hi there, fellow view-source enjoyer. 👋
+  I taught myself HTML on GeoCities and CSS on MySpace. Old habits.
+  There's a little something hidden here for the curious. Try the Konami code.
+  — Joey
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#14151a; --paper:#ffffff; --mist:#f4f5f7; --slate:#6b7078;
+  --hair:#dcdee3; --signal:#0a6cff; --signal-soft:#e7f0ff; --deep:#0b0d12;
+  --lcars:#ff9f1c;
+  --sans:'Inter',system-ui,sans-serif;
+  --display:'Space Grotesk','Inter',sans-serif;
+  --mono:'IBM Plex Mono',ui-monospace,monospace;
+  --maxw:1120px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--sans);color:var(--ink);background:var(--paper);
+  line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+
+/* ---------- shared type devices ---------- */
+.eyebrow{
+  font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:2.5px;
+  text-transform:uppercase;color:var(--signal);display:inline-flex;align-items:center;gap:9px;
+}
+.eyebrow::before{content:"";width:22px;height:1px;background:var(--signal);display:inline-block}
+.eyebrow.on-dark{color:#7db3ff}
+.eyebrow.on-dark::before{background:#7db3ff}
+h2.sec{font-family:var(--display);font-weight:600;font-size:clamp(28px,4vw,42px);letter-spacing:-.02em;line-height:1.05;margin:16px 0 14px}
+.sec-lead{color:var(--slate);font-size:17px;max-width:60ch}
+.section{padding:96px 0;border-top:1px solid var(--hair)}
+
+/* ---------- nav ---------- */
+.nav{
+  position:sticky;top:0;z-index:60;background:rgba(255,255,255,.82);
+  backdrop-filter:saturate(1.4) blur(12px);border-bottom:1px solid var(--hair);
+}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:62px}
+.brand{font-family:var(--mono);font-weight:500;letter-spacing:.5px;font-size:14px;display:flex;align-items:center;gap:9px}
+.brand .dot{width:8px;height:8px;background:var(--signal);border-radius:2px;box-shadow:0 0 0 0 var(--signal);animation:ping 3.4s ease-out infinite}
+@keyframes ping{0%{box-shadow:0 0 0 0 rgba(10,108,255,.5)}70%,100%{box-shadow:0 0 0 8px rgba(10,108,255,0)}}
+.nav-links{display:flex;gap:26px;align-items:center}
+.nav-links a{font-size:14px;color:var(--slate);font-weight:500;transition:color .2s}
+.nav-links a:hover{color:var(--ink)}
+.nav-cta{font-family:var(--mono);font-size:12.5px;letter-spacing:.4px;color:var(--paper)!important;background:var(--ink);padding:9px 15px;border-radius:8px;transition:background .2s}
+.nav-cta:hover{background:var(--signal)}
+.nav-toggle{display:none;background:none;border:1px solid var(--hair);border-radius:8px;padding:7px 10px;font-family:var(--mono);font-size:12px;cursor:pointer}
+
+/* ---------- hero ---------- */
+.hero{padding:80px 0 88px;position:relative}
+.hero-grid{display:grid;grid-template-columns:1.35fr .9fr;gap:56px;align-items:center}
+.hero h1{font-family:var(--display);font-weight:700;font-size:clamp(34px,5.4vw,60px);line-height:1.02;letter-spacing:-.03em;margin:20px 0 22px}
+.hero h1 .sig{color:var(--signal)}
+.hero-sub{font-size:19px;color:var(--slate);max-width:52ch;margin-bottom:30px}
+.hero-sub b{color:var(--ink);font-weight:600}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:34px}
+.btn{font-family:var(--mono);font-size:13.5px;letter-spacing:.3px;padding:13px 20px;border-radius:10px;border:1px solid var(--ink);transition:.2s;cursor:pointer;display:inline-flex;align-items:center;gap:9px}
+.btn-primary{background:var(--ink);color:var(--paper)}
+.btn-primary:hover{background:var(--signal);border-color:var(--signal)}
+.btn-ghost{background:transparent;color:var(--ink)}
+.btn-ghost:hover{border-color:var(--signal);color:var(--signal)}
+.readouts{display:flex;gap:10px;flex-wrap:wrap}
+.readout{border:1px solid var(--hair);border-radius:10px;padding:11px 14px;background:var(--mist);min-width:0}
+.readout .n{font-family:var(--display);font-weight:600;font-size:20px;letter-spacing:-.02em}
+.readout .l{font-family:var(--mono);font-size:10.5px;letter-spacing:.6px;text-transform:uppercase;color:var(--slate);margin-top:2px}
+
+/* profile frame */
+.portrait{position:relative;aspect-ratio:4/5;border-radius:18px;overflow:hidden;border:1px solid var(--hair);
+  background:linear-gradient(150deg,#eef1f6 0%,#e5eaf3 55%,#dbe6fb 100%);}
+.portrait img{width:100%;height:100%;object-fit:cover;position:relative;z-index:2}
+.portrait .ph-label{position:absolute;inset:0;z-index:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;color:var(--slate);font-family:var(--mono);font-size:12px;letter-spacing:.5px;text-align:center;padding:20px}
+.portrait .ph-label svg{opacity:.5}
+.portrait .tag{position:absolute;left:12px;bottom:12px;z-index:3;font-family:var(--mono);font-size:11px;letter-spacing:.5px;background:rgba(11,13,18,.82);color:#fff;padding:6px 10px;border-radius:8px;backdrop-filter:blur(4px)}
+
+/* ---------- WHY / manifesto (dark band) ---------- */
+.why{background:var(--deep);color:#eef0f4;border-top:1px solid #1c2130}
+.why .wrap{padding-top:100px;padding-bottom:100px}
+.why h2.sec{color:#fff}
+.golden{display:grid;grid-template-columns:230px 1fr;gap:44px;margin-top:44px;align-items:center}
+.rings{position:relative;width:210px;height:210px;justify-self:center}
+.ring{position:absolute;border-radius:50%;border:1px solid rgba(125,179,255,.35);display:flex;align-items:flex-start;justify-content:center}
+.ring span{font-family:var(--mono);font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:#7db3ff;margin-top:9px}
+.ring.r1{inset:0}
+.ring.r2{inset:34px;border-color:rgba(125,179,255,.5)}
+.ring.r3{inset:68px;border-color:var(--signal);background:radial-gradient(circle,rgba(10,108,255,.25),transparent 70%)}
+.ring.r3 span{color:#cfe0ff}
+.ring .core{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:12px;height:12px;border-radius:50%;background:var(--signal);box-shadow:0 0 22px 4px rgba(10,108,255,.6)}
+.why-copy p{color:#c7cdd8;font-size:17px;margin-bottom:16px;max-width:62ch}
+.why-copy p b{color:#fff;font-weight:600}
+.why-lines{margin-top:34px;display:grid;gap:0;border-top:1px solid #1c2130}
+.why-line{display:grid;grid-template-columns:96px 1fr;gap:20px;padding:18px 0;border-bottom:1px solid #1c2130;align-items:baseline}
+.why-line .k{font-family:var(--mono);font-size:12px;letter-spacing:2px;text-transform:uppercase;color:#7db3ff}
+.why-line .v{color:#dfe3ea;font-size:16px}
+.why-line .v b{color:#fff}
+.trek{margin-top:30px;font-family:var(--mono);font-size:13px;color:#8b93a3;display:flex;align-items:center;gap:10px}
+.trek .llap{cursor:pointer;color:var(--lcars);border-bottom:1px dashed rgba(255,159,28,.5);transition:.2s}
+.trek .llap:hover{color:#ffd08a}
+
+/* ---------- experience accordion ---------- */
+.xp{display:grid;gap:0;margin-top:40px;border-top:1px solid var(--hair)}
+.xp-item{border-bottom:1px solid var(--hair)}
+.xp-head{width:100%;background:none;border:0;text-align:left;cursor:pointer;padding:22px 6px;display:grid;grid-template-columns:118px 1fr auto;gap:22px;align-items:baseline;font-family:inherit;transition:.15s}
+.xp-head:hover{background:var(--mist)}
+.xp-date{font-family:var(--mono);font-size:12px;color:var(--slate);letter-spacing:.3px;white-space:nowrap}
+.xp-title{font-family:var(--display);font-weight:600;font-size:19px;letter-spacing:-.01em}
+.xp-org{color:var(--signal);font-size:13.5px;font-weight:500;margin-top:3px}
+.xp-org .loc{color:var(--slate);font-weight:400}
+.xp-plus{font-family:var(--mono);font-size:20px;color:var(--slate);transition:transform .25s;line-height:1}
+.xp-head[aria-expanded="true"] .xp-plus{transform:rotate(45deg);color:var(--signal)}
+.xp-body{overflow:hidden;max-height:0;transition:max-height .35s ease}
+.xp-body-inner{padding:2px 6px 26px;display:grid;grid-template-columns:118px 1fr;gap:22px}
+.xp-body-inner .spacer{}
+.xp-body ul{list-style:none;display:grid;gap:9px}
+.xp-body li{position:relative;padding-left:16px;color:#33363d;font-size:15px}
+.xp-body li::before{content:"";position:absolute;left:0;top:9px;width:5px;height:5px;background:var(--signal);border-radius:1px}
+.xp-tags{margin-top:14px;display:flex;flex-wrap:wrap;gap:7px}
+.xp-tags span{font-family:var(--mono);font-size:11px;color:var(--slate);border:1px solid var(--hair);border-radius:6px;padding:4px 8px}
+
+/* ---------- connections (signature) ---------- */
+.conn{background:var(--mist)}
+.conn-tool{display:grid;grid-template-columns:300px 1fr;gap:34px;margin-top:44px}
+.conn-roots{display:flex;flex-direction:column;gap:10px}
+.conn-hint{font-family:var(--mono);font-size:12px;color:var(--slate);margin-bottom:6px;letter-spacing:.3px}
+.root{width:100%;text-align:left;background:var(--paper);border:1px solid var(--hair);border-radius:12px;padding:13px 15px;cursor:pointer;transition:.18s;font-family:inherit}
+.root:hover{border-color:var(--signal)}
+.root .rt{font-weight:600;font-size:14.5px;display:flex;align-items:center;gap:9px}
+.root .rt::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--slate);flex:none;transition:.18s}
+.root .rd{color:var(--slate);font-size:12.5px;margin-top:3px;margin-left:18px}
+.root.active{border-color:var(--signal);background:var(--signal-soft)}
+.root.active .rt::before{background:var(--signal);box-shadow:0 0 0 4px rgba(10,108,255,.18)}
+.root.dim{opacity:.4}
+.caps{display:grid;grid-template-columns:1fr 1fr;gap:14px;align-content:start}
+.cap{background:var(--paper);border:1px solid var(--hair);border-radius:14px;padding:18px;cursor:pointer;transition:.18s;position:relative;overflow:hidden}
+.cap::after{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--signal);transform:scaleY(0);transform-origin:top;transition:transform .25s}
+.cap:hover{border-color:var(--signal)}
+.cap.active{border-color:var(--signal);box-shadow:0 10px 30px -14px rgba(10,108,255,.4)}
+.cap.active::after{transform:scaleY(1)}
+.cap.dim{opacity:.32}
+.cap h4{font-family:var(--display);font-weight:600;font-size:16.5px;letter-spacing:-.01em;margin-bottom:6px}
+.cap p{color:var(--slate);font-size:13.5px;line-height:1.5}
+.cap .from{margin-top:11px;font-family:var(--mono);font-size:10.5px;letter-spacing:.4px;text-transform:uppercase;color:var(--signal);opacity:0;max-height:0;transition:.25s}
+.cap.active .from{opacity:1;max-height:40px}
+.conn-clear{margin-top:14px;font-family:var(--mono);font-size:12px;color:var(--signal);background:none;border:0;cursor:pointer;padding:6px 0}
+
+/* ---------- skills ---------- */
+.skill-cats{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px;margin-top:40px}
+.skill-cat{border:1px solid var(--hair);border-radius:14px;padding:20px}
+.skill-cat .ct{font-family:var(--mono);font-size:11px;letter-spacing:1.4px;text-transform:uppercase;color:var(--signal);margin-bottom:13px}
+.chips{display:flex;flex-wrap:wrap;gap:7px}
+.chip{font-size:13px;color:#33363d;background:var(--mist);border:1px solid var(--hair);border-radius:7px;padding:5px 10px}
+
+/* ---------- certifications ---------- */
+.cert-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px;margin-top:40px}
+.cert{text-align:left;background:var(--paper);border:1px solid var(--hair);border-radius:14px;padding:18px;cursor:pointer;transition:.18s;font-family:inherit;display:flex;flex-direction:column;gap:6px}
+.cert:hover{border-color:var(--signal);transform:translateY(-2px)}
+.cert .badge{font-family:var(--mono);font-size:10.5px;letter-spacing:.8px;text-transform:uppercase;color:var(--signal)}
+.cert .cn{font-family:var(--display);font-weight:600;font-size:15.5px;letter-spacing:-.01em;line-height:1.2}
+.cert .cmeta{font-size:12.5px;color:var(--slate)}
+.cert .view{margin-top:6px;font-family:var(--mono);font-size:11px;color:var(--slate);display:flex;align-items:center;gap:6px}
+.cert.inprog{cursor:default;opacity:.9}
+.cert.inprog:hover{transform:none;border-color:var(--hair)}
+.cert-note{font-family:var(--mono);font-size:12px;color:var(--slate);margin-top:16px;max-width:70ch}
+
+/* modal */
+.modal{position:fixed;inset:0;z-index:100;background:rgba(11,13,18,.6);backdrop-filter:blur(4px);display:none;align-items:center;justify-content:center;padding:24px}
+.modal.open{display:flex}
+.modal-card{background:var(--paper);border-radius:16px;width:min(860px,96vw);max-height:92vh;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 30px 80px -20px rgba(0,0,0,.5)}
+.modal-top{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;border-bottom:1px solid var(--hair)}
+.modal-top .mt{font-family:var(--display);font-weight:600;font-size:16px}
+.modal-close{background:var(--mist);border:1px solid var(--hair);border-radius:8px;width:32px;height:32px;cursor:pointer;font-size:16px;line-height:1}
+.modal-body{padding:0;flex:1;min-height:0;background:var(--mist)}
+.modal-body iframe{width:100%;height:64vh;border:0;background:#fff}
+.modal-fallback{padding:22px;font-family:var(--mono);font-size:13px;color:var(--slate);line-height:1.6}
+.modal-fallback a{color:var(--signal)}
+
+/* ---------- community ---------- */
+.comm-lead{max-width:66ch;color:var(--slate);font-size:17px}
+.comm-lead b{color:var(--ink);font-weight:600}
+.comm-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;margin-top:38px}
+.comm-card{border:1px solid var(--hair);border-radius:16px;overflow:hidden;background:var(--paper);transition:.2s;display:flex;flex-direction:column}
+.comm-card:hover{border-color:var(--signal);transform:translateY(-3px);box-shadow:0 16px 40px -22px rgba(10,108,255,.4)}
+.media{position:relative;aspect-ratio:16/10;background:linear-gradient(140deg,#eef1f6,#e2e9f5)}
+.media img{width:100%;height:100%;object-fit:cover;position:relative;z-index:2}
+.media .ph-label{position:absolute;inset:0;z-index:1;display:flex;align-items:center;justify-content:center;color:var(--slate);font-family:var(--mono);font-size:11px;letter-spacing:.5px;text-align:center;padding:14px}
+.comm-body{padding:16px 17px 18px}
+.comm-body h4{font-family:var(--display);font-weight:600;font-size:16px;letter-spacing:-.01em;margin-bottom:6px}
+.comm-body p{color:var(--slate);font-size:13.5px;line-height:1.5}
+.comm-body .lk{margin-top:11px;font-family:var(--mono);font-size:11.5px;color:var(--signal);display:inline-flex;align-items:center;gap:6px}
+.comm-foot{margin-top:30px;font-size:14.5px;color:var(--slate)}
+.comm-foot b{color:var(--ink)}
+
+/* ---------- contact / footer ---------- */
+.contact{background:var(--deep);color:#eef0f4}
+.contact .wrap{padding:96px 28px}
+.contact h2.sec{color:#fff}
+.contact .sec-lead{color:#aab1be}
+.contact-actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:30px}
+.c-btn{font-family:var(--mono);font-size:13.5px;padding:14px 22px;border-radius:11px;transition:.2s;display:inline-flex;align-items:center;gap:9px;border:1px solid #2a3040;color:#eef0f4}
+.c-btn.primary{background:var(--signal);border-color:var(--signal);color:#fff}
+.c-btn.primary:hover{filter:brightness(1.08)}
+.c-btn:hover{border-color:#4b5568}
+footer.foot{background:var(--deep);color:#7a8291;border-top:1px solid #1c2130}
+footer.foot .wrap{display:flex;justify-content:space-between;align-items:center;padding:26px 28px;flex-wrap:wrap;gap:12px;font-family:var(--mono);font-size:12px}
+footer.foot .spock{cursor:pointer;font-size:16px;transition:transform .2s;user-select:none}
+footer.foot .spock:hover{transform:scale(1.25) rotate(-8deg)}
+
+/* toast */
+.toast{position:fixed;left:50%;bottom:30px;transform:translateX(-50%) translateY(20px);background:var(--ink);color:#fff;font-family:var(--mono);font-size:13px;padding:12px 18px;border-radius:10px;opacity:0;pointer-events:none;transition:.3s;z-index:120}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+.reveal.in{opacity:1;transform:none}
+
+/* ---------- responsive ---------- */
+@media(max-width:860px){
+  .hero-grid{grid-template-columns:1fr;gap:36px}
+  .portrait{max-width:320px}
+  .golden{grid-template-columns:1fr;gap:30px}
+  .conn-tool{grid-template-columns:1fr}
+  .caps{grid-template-columns:1fr}
+  .nav-links{position:fixed;inset:62px 0 auto 0;background:rgba(255,255,255,.97);flex-direction:column;gap:0;border-bottom:1px solid var(--hair);display:none}
+  .nav-links.open{display:flex}
+  .nav-links a{padding:15px 28px;border-top:1px solid var(--hair);width:100%}
+  .nav-links .nav-cta{margin:14px 28px;text-align:center}
+  .nav-toggle{display:inline-block}
+  .xp-head{grid-template-columns:1fr auto;gap:12px}
+  .xp-date{grid-column:1/-1;order:-1}
+  .xp-body-inner{grid-template-columns:1fr}
+  .xp-body-inner .spacer{display:none}
+}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .reveal{opacity:1;transform:none}
+}
+
+/* ============ RETRO 1999 EASTER EGG ============ */
+body.retro{background:#000 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Ctext x='4' y='24' font-size='20'%3E%E2%AD%90%3C/text%3E%3C/svg%3E");cursor:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='28'%3E%3Ctext y='22' font-size='22'%3E%E2%9C%A8%3C/text%3E%3C/svg%3E"),auto;font-family:'Comic Sans MS','Comic Sans',cursive!important}
+body.retro .nav,body.retro .section,body.retro .why,body.retro .conn,body.retro .contact,body.retro footer.foot{background:#000080!important;color:#fff!important;border-color:#00ffff!important}
+body.retro .hero{background:#000080}
+body.retro h1,body.retro h2.sec,body.retro .xp-title,body.retro .cap h4,body.retro .comm-body h4{color:#ffff00!important;font-family:'Comic Sans MS',cursive!important;text-shadow:2px 2px #ff00ff}
+body.retro .eyebrow,body.retro .xp-org,body.retro .badge{color:#00ffff!important}
+body.retro .btn,body.retro .c-btn,body.retro .cert,body.retro .cap,body.retro .comm-card,body.retro .skill-cat,body.retro .readout,body.retro .root{background:#c0c0c0!important;color:#000!important;border:3px outset #fff!important;border-radius:0!important}
+body.retro a{color:#00ffff!important}
+.retro-bar{display:none;position:fixed;top:0;left:0;right:0;z-index:200;background:#000080;color:#fff;border-bottom:3px ridge #00ffff;padding:6px 0;font-family:'Comic Sans MS',cursive}
+body.retro .retro-bar{display:block}
+.retro-bar .marq{white-space:nowrap;overflow:hidden}
+.retro-bar .marq span{display:inline-block;padding-left:100%;animation:marq 16s linear infinite;font-size:15px}
+@keyframes marq{to{transform:translateX(-100%)}}
+.retro-panel{display:none;position:fixed;bottom:16px;right:16px;z-index:201;background:#c0c0c0;border:3px outset #fff;padding:12px;font-family:'Comic Sans MS',cursive;color:#000;text-align:center}
+body.retro .retro-panel{display:block}
+.retro-panel .counter{font-family:'Courier New',monospace;background:#000;color:#0f0;padding:4px 8px;letter-spacing:3px;display:inline-block;margin:6px 0;border:2px inset #888}
+.retro-panel button{margin-top:8px;font-family:'Comic Sans MS',cursive;cursor:pointer;background:#000080;color:#fff;border:2px outset #00ffff;padding:5px 12px}
+.retro-panel .nav-note{font-size:11px;margin-top:6px}
+.blink{animation:blink 1s steps(2,start) infinite}
+@keyframes blink{to{visibility:hidden}}
+</style>
+</head>
+<body>
+
+<div class="retro-bar"><div class="marq"><span>★彡 WELCOME TO JOEY'S HOMEPAGE ON THE INFORMATION SUPERHIGHWAY 彡★ &nbsp; This site is under construction 🚧 &nbsp; Best viewed in Netscape Navigator 4.0 at 800×600 &nbsp; Sign my guestbook! &nbsp; ★彡 thank u 4 visiting 彡★</span></div></div>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top"><span class="dot"></span>JOSE&nbsp;DIAZ<span style="color:var(--slate)">.dev</span></a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">MENU</button>
+    <div class="nav-links" id="navLinks">
+      <a href="#why">Why</a>
+      <a href="#experience">Experience</a>
+      <a href="#connections">Connections</a>
+      <a href="#skills">Skills</a>
+      <a href="#community">Community</a>
+      <a class="nav-cta" href="files/Jose_Diaz_Resume.pdf" target="_blank" rel="noopener">Résumé ↗</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero" id="top">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <span class="eyebrow">Enterprise Endpoint &amp; Mobility · Apple Device Management</span>
+        <h1>I build the systems that let people <span class="sig">forget technology exists.</span></h1>
+        <p class="hero-sub">I'm <b>Jose "Joey" Diaz</b> — an enterprise Apple &amp; mobility architect and lifelong end-user advocate. I take unfamiliar platforms and turn them into <b>governed, humane systems</b> people never have to think about. I don't crave control; I crave results.</p>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="files/Jose_Diaz_Resume.pdf" target="_blank" rel="noopener">Download résumé <span>↗</span></a>
+          <a class="btn btn-ghost" href="#connections">See how it connects <span>→</span></a>
+        </div>
+        <div class="readouts">
+          <div class="readout"><div class="n">20+ yrs</div><div class="l">Tech &amp; ops</div></div>
+          <div class="readout"><div class="n">~4,000</div><div class="l">Users supported</div></div>
+          <div class="readout"><div class="n">~2,600</div><div class="l">Devices managed</div></div>
+          <div class="readout"><div class="n">Team of 1</div><div class="l">Built from zero</div></div>
+        </div>
+      </div>
+      <div class="portrait">
+        <div class="ph-label">
+          <svg width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+          add images/profile.jpg
+        </div>
+        <img src="images/profile.jpg" alt="Jose &quot;Joey&quot; Diaz" onerror="this.style.display='none'">
+        <span class="tag">Minneapolis · open to SF Bay Area</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- WHY -->
+<section class="why" id="why">
+  <div class="wrap">
+    <span class="eyebrow on-dark">Start with why</span>
+    <h2 class="sec">Belief before product.</h2>
+    <div class="golden">
+      <div class="rings" aria-hidden="true">
+        <div class="ring r1"><span>What</span></div>
+        <div class="ring r2"><span>How</span></div>
+        <div class="ring r3"><span>Why</span></div>
+        <div class="core"></div>
+      </div>
+      <div class="why-copy">
+        <p>Simon Sinek's Golden Circle taught me something that stuck for fifteen years: <b>people invest in <i>why</i> you do the work, not just <i>what</i> the work is.</b> It's more rewarding, and far more stable, to serve people who believe what you believe than to sell to people who don't.</p>
+        <p>My jobs have changed. The belief hasn't: <b>technology should be so easy, advanced, and convenient that the person using it never has to think about it</b> — and someone should always be fighting for that person. Enterprise IT too often forgets who it's for. I don't.</p>
+      </div>
+    </div>
+    <div class="why-lines">
+      <div class="why-line"><div class="k">Why</div><div class="v">Great technology should <b>disappear</b> in service of the people who use it — and everyone deserves an advocate inside the system.</div></div>
+      <div class="why-line"><div class="k">How</div><div class="v">Build from first principles when no path exists. Advocate for the end user, always. Turn chaos into <b>governed, supportable</b> systems.</div></div>
+      <div class="why-line"><div class="k">What</div><div class="v">Enterprise Apple &amp; mobility architecture, MDM, endpoint governance — and the daily craft of making devices <b>just work</b>.</div></div>
+    </div>
+    <div class="trek">🖖&nbsp; I'm a Trekkie chasing the future Star&nbsp;Trek imagined — and I know that road is long and hard-won. <span class="llap" id="llap">Stories are practical maps.</span></div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section class="section" id="experience">
+  <div class="wrap">
+    <span class="eyebrow">The work</span>
+    <h2 class="sec">Experience, on demand.</h2>
+    <p class="sec-lead">A decade-plus in enterprise IT, built on two decades of technology and operations. Open any role for the detail — closed, it stays scannable.</p>
+    <div class="xp" id="xp"></div>
+  </div>
+</section>
+
+<!-- CONNECTIONS -->
+<section class="section conn" id="connections">
+  <div class="wrap">
+    <span class="eyebrow">The signature</span>
+    <h2 class="sec">We are a sum of our experiences.</h2>
+    <p class="sec-lead">Nothing on a résumé stands alone. Pick an experience and watch which strengths it quietly feeds — or pick a strength and trace it back to where it came from.</p>
+    <div class="conn-tool">
+      <div>
+        <div class="conn-hint">▸ Select an experience</div>
+        <div class="conn-roots" id="connRoots"></div>
+        <button class="conn-clear" id="connClear" hidden>× clear selection</button>
+      </div>
+      <div class="caps" id="connCaps"></div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section class="section" id="skills">
+  <div class="wrap">
+    <span class="eyebrow">The toolkit</span>
+    <h2 class="sec">What I work in.</h2>
+    <div class="skill-cats" id="skills"></div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section class="section" id="certs" style="background:var(--mist)">
+  <div class="wrap">
+    <span class="eyebrow">Verified</span>
+    <h2 class="sec">Certifications.</h2>
+    <p class="sec-lead">Click a credential to view the certificate.</p>
+    <div class="cert-grid" id="certGrid"></div>
+    <p class="cert-note">HDI is the issuing body; these are ITIL-based service-management credentials. ITIL foundational training completed in-house during the City's IT insourcing (no separate certificate issued).</p>
+  </div>
+</section>
+
+<!-- COMMUNITY -->
+<section class="section" id="community">
+  <div class="wrap">
+    <span class="eyebrow">In service</span>
+    <h2 class="sec">Community &amp; skill-sharing.</h2>
+    <p class="comm-lead">If I have a skill that can help and a friend needs it, I use it. For the past two years I've helped local small businesses — most consistently a <b>family-owned Vietnamese restaurant</b> — build a professional presence, from their digital footprint to the physical room. Often at no charge. It's the same belief as the day job: <b>be of service</b>.</p>
+    <div class="comm-grid" id="commGrid"></div>
+    <p class="comm-foot"><b>Volunteer:</b> Habitat for Humanity International · Wings for Hope / Toys for Tots — since 2012.</p>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="wrap">
+    <span class="eyebrow on-dark">Let's talk</span>
+    <h2 class="sec">Looking for a place where belief drives action.</h2>
+    <p class="sec-lead">Public service let me use these skills for residents. Now I'm after a bigger dent — a team with a belief system guiding its work, where I can get results without waiting on the bottleneck. If that's you, let's talk.</p>
+    <div class="contact-actions">
+      <a class="c-btn primary" href="mailto:Me@JDiaz.US">Email me@jdiaz.us <span>↗</span></a>
+      <a class="c-btn" href="https://linkedin.com/in/getjosed" target="_blank" rel="noopener">LinkedIn ↗</a>
+      <a class="c-btn" href="files/Jose_Diaz_Resume.pdf" target="_blank" rel="noopener">Résumé (PDF) ↗</a>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="wrap">
+    <div>© <span id="yr"></span> Jose "Joey" Diaz · Built by hand, the way I learned it.</div>
+    <div>Minneapolis, MN · <span class="spock" id="spock" title="go on, tap it">🖖</span></div>
+  </div>
+</footer>
+
+<!-- retro panel -->
+<div class="retro-panel">
+  <div>You are visitor</div>
+  <div class="counter" id="visCounter">000041</div>
+  <div class="blink" style="color:#ff0">✦ thanks 4 stopping by ✦</div>
+  <div class="nav-note">© 1999 · made w/ ❤ + Notepad</div>
+  <button id="retroExit">Take me back to 2026</button>
+</div>
+
+<!-- cert modal -->
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-label="Certificate viewer">
+  <div class="modal-card">
+    <div class="modal-top">
+      <div class="mt" id="modalTitle">Certificate</div>
+      <button class="modal-close" id="modalClose" aria-label="Close">×</button>
+    </div>
+    <div class="modal-body">
+      <iframe id="modalFrame" title="Certificate PDF"></iframe>
+      <div class="modal-fallback">If the certificate doesn't appear, the PDF hasn't been added yet — drop it in the <b>/certs/</b> folder, or <a id="modalOpen" href="#" target="_blank" rel="noopener">open it in a new tab ↗</a>.</div>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+/* ---------------- DATA ---------------- */
+const experience = [
+  { date:"2026 — Present", title:"Enterprise Endpoint & Mobility Architect", org:"City of Minneapolis — IT", loc:"· Interim detail",
+    bullets:[
+      "Sole architect and owner of an enterprise mobility program that didn't previously exist — MDM architecture, policy, security, compliance, and daily operations across every department, for ~4,000 users and ~2,600 devices.",
+      "Led a large-scale MDM migration (~800 users) into centralized, governed management — federating identity with Managed Apple Accounts in direct coordination with Apple, and deploying on FirstNet.",
+      "Live in Apple Business Manager daily: automated enrollment, app and content distribution, declarative device management, and shared-device, kiosk, and Entra shared-device models.",
+      "Negotiated significant multi-year carrier savings through consolidation, and embedded state data-practice and records-retention requirements directly into platform design.",
+      "Engineer standardized device 'packages' so every issued device arrives fully prepared — and lean on automation and AI as a force multiplier for a one-person practice."
+    ], tags:["Apple Business Manager","Intune","Entra ID","Managed Apple Accounts","FirstNet","MGDPA"] },
+  { date:"2015 — 2026", title:"IT Service Desk Manager → IT Manager", org:"City of Minneapolis — IT", loc:"",
+    bullets:[
+      "Launched the City's in-house IT Service Desk after 13 years of outsourced service — stood up support operations, the knowledgebase, and ITIL-aligned processes from the ground up for 4,000+ users.",
+      "Owned enterprise mobile device lifecycle and procurement; built a knowledge program of 800+ articles across 450+ applications.",
+      "Served as 24×7×365 on-call major incident manager for high-impact events, and led IT service-continuity planning for major events including Super Bowl LII.",
+      "Every decision I made here served employees directly — that's where the end-user advocacy hardened into instinct."
+    ], tags:["ServiceNow","ITIL","Major Incident","Knowledge Mgmt","Procurement"] },
+  { date:"2014 — 2015", title:"Assistant Manager, Computer Services & Support", org:"Micro Center", loc:"· St. Louis Park, MN",
+    bullets:[
+      "Led service & repair for a top-performing location; scaled the team from 7 to 16 technicians.",
+      "Ran an Apple-authorized service operation and led Apple ACMT certification across the team.",
+      "Cut average repair turnaround by 10 days in six months; launched a same-day service program reaching 60% of customers.",
+      "Owned P&L, training, and vendor relationships — a full service business, not just a repair bench."
+    ], tags:["Apple ACMT","P&L","Team leadership","Vendor mgmt"] },
+  { date:"2011 — 2013", title:"Services Supervisor", org:"Geek Squad · Best Buy", loc:"· Eden Prairie, MN",
+    bullets:[
+      "Led end-to-end service performance (revenue, NPS, operations) for a 30+ person team; District Specialty Coach across MN/SD/ND.",
+      "Diagnosed and repaired macOS and Windows systems; supported iOS, Android, and Windows users daily — whatever came through the door.",
+      "Consumer support is unmitigated chaos. Thriving in it is why nothing in enterprise rattles me."
+    ], tags:["Consumer support","macOS","Coaching","NPS"] },
+  { date:"2001 — 2014", title:"Retail Leadership", org:"T-Mobile · OfficeMax · Office Depot", loc:"· earlier",
+    bullets:[
+      "Multi-unit retail leadership: certified incoming managers at a designated training store, owned inventory control with district-leading shrink, and carried top-line revenue and P&L.",
+      "Ran print & design services at OfficeMax — the origin of design and communication instincts I still use today.",
+      "This is where business fluency and people development came from, long before the servers did."
+    ], tags:["P&L","Training","Inventory","Print & design"] }
+];
+
+const roots = [
+  { key:"svc", t:"A decade running a Service Desk", d:"Every decision served employees directly." },
+  { key:"consumer", t:"Consumer support at volume", d:"Geek Squad & Micro Center — pure chaos." },
+  { key:"retail", t:"Retail leadership & P&L", d:"OfficeMax, Office Depot, T-Mobile." },
+  { key:"mdm", t:"Building MDM from zero", d:"No playbook, no precedent, no SME." },
+  { key:"selftaught", t:"Self-teaching since GeoCities", d:"HTML → CSS → scripting → MDM." },
+  { key:"incident", t:"24/7 major incident command", d:"High-stakes, high-pressure, on call." },
+  { key:"print", t:"Print & design bench", d:"OfficeMax design center + MySpace era." },
+  { key:"smallbiz", t:"Small-business consulting", d:"Community brand, systems & security." }
+];
+
+const caps = [
+  { t:"End-user advocacy", d:"I design for the person, not the console — because I've spent a career on their side of the counter.", roots:["svc","consumer","retail"] },
+  { t:"Grace under pressure", d:"Nothing enterprise throws at me compares to a consumer holiday rush or a P1 at 3 a.m.", roots:["consumer","incident","svc"] },
+  { t:"Realistic engineering expectations", d:"Having built and broken systems myself, I know what dev time and troubleshooting actually take.", roots:["selftaught","mdm"] },
+  { t:"Build-from-zero instinct", d:"Give me a blank page and no map. That's been my favorite place to work since I was a teenager.", roots:["mdm","selftaught"] },
+  { t:"Business & operational fluency", d:"P&L, vendors, procurement, carriers — I read a technology decision as a business decision too.", roots:["retail","smallbiz","svc"] },
+  { t:"Design & communication sense", d:"I can make the complex simple on a page or a screen — a skill that started with print and personal sites.", roots:["print","selftaught","smallbiz"] },
+  { t:"Systems thinking & integration", d:"MDM, identity, carriers, POS, delivery — I connect moving parts into one coherent experience.", roots:["mdm","smallbiz","svc"] },
+  { t:"Being of service", d:"If a skill I have can help someone, I use it. That instinct shows up in every role I've held.", roots:["svc","smallbiz","consumer"] }
+];
+
+const skills = [
+  { c:"Apple & Mobility", items:["Apple Business Manager","Managed Apple Accounts","Automated Device Enrollment (ADE)","Declarative Device Management","Shared iPad & kiosk","VPP / app distribution","Apple Configurator","iOS / iPadOS / macOS"] },
+  { c:"Endpoint & Identity", items:["Microsoft Intune","Microsoft Entra ID","Entra shared-device","Cross-platform MDM","Android Enterprise","Endpoint compliance & hardening","Microsoft 365"] },
+  { c:"Operations & Process", items:["ServiceNow (ITSM)","ITIL practices","Major incident management","Knowledge management","Device lifecycle","Carrier management","Procurement"] },
+  { c:"Foundations & Human", items:["End-user support","Team leadership","P&L management","Training & enablement","Technical documentation","AI-assisted workflows","Small-business consulting"] }
+];
+
+const certs = [
+  { badge:"HDI", name:"Support Center Manager", meta:"ITIL-based · HDI", file:"certs/hdi-support-center-manager.pdf" },
+  { badge:"HDI", name:"Problem Management Professional", meta:"ITIL-based · HDI", file:"certs/hdi-problem-management.pdf" },
+  { badge:"HDI", name:"Knowledge Manager", meta:"ITIL-based · HDI", file:"certs/hdi-knowledge-manager.pdf" },
+  { badge:"HDI", name:"Technical Support Professional", meta:"ITIL-based · HDI", file:"certs/hdi-technical-support.pdf" },
+  { badge:"CompTIA", name:"A+", meta:"CompTIA", file:"certs/comptia-a-plus.pdf" },
+  { badge:"In progress", name:"ServiceNow Administrator · BeyondTrust Administrator", meta:"In progress", inprog:true }
+];
+
+const community = [
+  { img:"images/community-profiles.jpg", ph:"Google & Apple Business Connect", h:"Online identity & profiles", p:"Brand and listing management across Google Business Profile and Apple Business Connect — plus review management and response.", link:"#", lk:"View listings" },
+  { img:"images/community-menu.jpg", ph:"Menu design & print", h:"Menu design & print", p:"Designed and printed the restaurant's menu end to end — layout, typography, and production.", link:"files/menu.pdf", lk:"See the menu" },
+  { img:"images/community-interior.jpg", ph:"The space", h:"Interior design (on a budget)", p:"Helped shape a space worth sharing — because a room people photograph is free, long-term marketing.", link:"#", lk:"See the space" },
+  { img:"images/community-systems.jpg", ph:"POS + delivery integration", h:"Systems & integration", p:"Tied POS (Toast, Shift4, Square) to online ordering and delivery (DoorDash, Uber Eats, Grubhub), including menu sync.", link:"#", lk:"How it connects" },
+  { img:"images/community-web.jpg", ph:"Website & content", h:"Website & content services", p:"Built and maintain their web presence and content — and advise on what to do next.", link:"#", lk:"Visit the site" },
+  { img:"images/community-security.jpg", ph:"Small-business IT security", h:"Security & separation", p:"Separated work and personal systems so they can scale access safely without risking personal accounts.", link:"#", lk:"The approach" }
+];
+
+/* ---------------- RENDER ---------------- */
+const el = (h)=>{const t=document.createElement('template');t.innerHTML=h.trim();return t.content.firstChild;};
+
+// experience
+const xp = document.getElementById('xp');
+experience.forEach((r,i)=>{
+  const item = el(`<div class="xp-item">
+    <button class="xp-head" aria-expanded="false" aria-controls="xpb${i}">
+      <span class="xp-date">${r.date}</span>
+      <span><span class="xp-title">${r.title}</span><span class="xp-org">${r.org} <span class="loc">${r.loc}</span></span></span>
+      <span class="xp-plus">+</span>
+    </button>
+    <div class="xp-body" id="xpb${i}"><div class="xp-body-inner"><div class="spacer"></div><div>
+      <ul>${r.bullets.map(b=>`<li>${b}</li>`).join('')}</ul>
+      <div class="xp-tags">${r.tags.map(t=>`<span>${t}</span>`).join('')}</div>
+    </div></div></div>
+  </div>`);
+  const head=item.querySelector('.xp-head'), body=item.querySelector('.xp-body');
+  head.addEventListener('click',()=>{
+    const open=head.getAttribute('aria-expanded')==='true';
+    head.setAttribute('aria-expanded',String(!open));
+    body.style.maxHeight = open ? '0' : body.scrollHeight+40+'px';
+  });
+  xp.appendChild(item);
+});
+
+// connections
+const rootsWrap=document.getElementById('connRoots'), capsWrap=document.getElementById('connCaps');
+const clearBtn=document.getElementById('connClear');
+let activeRoot=null, activeCap=null;
+roots.forEach(r=>{
+  const b=el(`<button class="root" data-key="${r.key}"><span class="rt">${r.t}</span><span class="rd">${r.d}</span></button>`);
+  b.addEventListener('click',()=>selectRoot(r.key));
+  rootsWrap.appendChild(b);
+});
+caps.forEach((c,i)=>{
+  const label = c.roots.map(k=>roots.find(r=>r.key===k)?.t.replace(/^A |^Building |^Consumer /,'')).slice(0,3).join(' · ');
+  const card=el(`<div class="cap" data-roots="${c.roots.join(',')}" data-i="${i}">
+    <h4>${c.t}</h4><p>${c.d}</p><div class="from">↖ from: ${label}</div></div>`);
+  card.addEventListener('click',()=>selectCap(i));
+  capsWrap.appendChild(card);
+});
+function reset(){
+  activeRoot=null;activeCap=null;
+  document.querySelectorAll('.root').forEach(r=>r.classList.remove('active','dim'));
+  document.querySelectorAll('.cap').forEach(c=>c.classList.remove('active','dim'));
+  clearBtn.hidden=true;
+}
+function selectRoot(key){
+  if(activeRoot===key){reset();return;}
+  reset();activeRoot=key;clearBtn.hidden=false;
+  document.querySelectorAll('.root').forEach(r=>{r.classList.toggle('active',r.dataset.key===key);r.classList.toggle('dim',r.dataset.key!==key);});
+  document.querySelectorAll('.cap').forEach(c=>{
+    const on=c.dataset.roots.split(',').includes(key);
+    c.classList.toggle('active',on);c.classList.toggle('dim',!on);
+  });
+}
+function selectCap(i){
+  if(activeCap===i){reset();return;}
+  reset();activeCap=i;clearBtn.hidden=false;
+  const card=document.querySelector(`.cap[data-i="${i}"]`);
+  const keys=card.dataset.roots.split(',');
+  document.querySelectorAll('.cap').forEach(c=>{c.classList.toggle('active',c.dataset.i==i);c.classList.toggle('dim',c.dataset.i!=i);});
+  document.querySelectorAll('.root').forEach(r=>{const on=keys.includes(r.dataset.key);r.classList.toggle('active',on);r.classList.toggle('dim',!on);});
+}
+clearBtn.addEventListener('click',reset);
+
+// skills
+const skillsWrap=document.getElementById('skills');
+skills.forEach(s=>{
+  skillsWrap.appendChild(el(`<div class="skill-cat"><div class="ct">${s.c}</div><div class="chips">${s.items.map(i=>`<span class="chip">${i}</span>`).join('')}</div></div>`));
+});
+
+// certs
+const certGrid=document.getElementById('certGrid');
+const modal=document.getElementById('modal'), modalFrame=document.getElementById('modalFrame'),
+      modalTitle=document.getElementById('modalTitle'), modalOpen=document.getElementById('modalOpen'),
+      modalClose=document.getElementById('modalClose');
+certs.forEach(c=>{
+  if(c.inprog){
+    certGrid.appendChild(el(`<div class="cert inprog"><span class="badge">${c.badge}</span><span class="cn">${c.name}</span><span class="cmeta">${c.meta}</span></div>`));
+    return;
+  }
+  const card=el(`<button class="cert"><span class="badge">${c.badge}</span><span class="cn">${c.name}</span><span class="cmeta">${c.meta}</span><span class="view">◱ view certificate</span></button>`);
+  card.addEventListener('click',()=>openCert(c));
+  certGrid.appendChild(card);
+});
+function openCert(c){
+  modalTitle.textContent=`${c.badge} — ${c.name}`;
+  modalFrame.src=c.file; modalOpen.href=c.file;
+  modal.classList.add('open'); document.body.style.overflow='hidden';
+}
+function closeCert(){modal.classList.remove('open');modalFrame.src='';document.body.style.overflow='';}
+modalClose.addEventListener('click',closeCert);
+modal.addEventListener('click',e=>{if(e.target===modal)closeCert();});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeCert();});
+
+// community
+const commGrid=document.getElementById('commGrid');
+community.forEach(c=>{
+  commGrid.appendChild(el(`<a class="comm-card" href="${c.link}" ${c.link.startsWith('http')?'target="_blank" rel="noopener"':''}>
+    <div class="media"><div class="ph-label">${c.ph}</div><img src="${c.img}" alt="${c.h}" onerror="this.style.display='none'"></div>
+    <div class="comm-body"><h4>${c.h}</h4><p>${c.p}</p><span class="lk">${c.lk} →</span></div></a>`));
+});
+
+/* ---------------- MISC ---------------- */
+document.getElementById('yr').textContent=new Date().getFullYear();
+
+// mobile nav
+const navToggle=document.getElementById('navToggle'), navLinks=document.getElementById('navLinks');
+navToggle.addEventListener('click',()=>navLinks.classList.toggle('open'));
+navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>navLinks.classList.remove('open')));
+
+// reveal on scroll
+const io=new IntersectionObserver((es)=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.12});
+document.querySelectorAll('.section .wrap > *, .hero-grid > *, .why .wrap > *').forEach(n=>{n.classList.add('reveal');io.observe(n);});
+
+// toast
+const toast=document.getElementById('toast');let toastT;
+function showToast(msg){toast.textContent=msg;toast.classList.add('show');clearTimeout(toastT);toastT=setTimeout(()=>toast.classList.remove('show'),2600);}
+
+// Trek easter eggs
+document.getElementById('spock').addEventListener('click',()=>showToast('🖖 Live long and prosper.'));
+document.getElementById('llap').addEventListener('click',()=>showToast('“Things are only impossible until they’re not.” — Capt. Picard'));
+
+/* ---------------- RETRO 1999 KONAMI EGG ---------------- */
+const KONAMI=['ArrowUp','ArrowUp','ArrowDown','ArrowDown','ArrowLeft','ArrowRight','ArrowLeft','ArrowRight','b','a'];
+let ki=0;
+document.addEventListener('keydown',e=>{
+  const k=e.key.length===1?e.key.toLowerCase():e.key;
+  ki = (k===KONAMI[ki]) ? ki+1 : (k===KONAMI[0]?1:0);
+  if(ki===KONAMI.length){ki=0;enterRetro();}
+});
+function enterRetro(){
+  document.body.classList.add('retro');
+  showToast('⭐ WELCOME TO 1999 ⭐ you found it!');
+  // animate the visitor counter for nostalgia
+  let n=41;const c=document.getElementById('visCounter');
+  const t=setInterval(()=>{n++;c.textContent=String(n).padStart(6,'0');if(n>=137)clearInterval(t);},60);
+}
+document.getElementById('retroExit').addEventListener('click',()=>{document.body.classList.remove('retro');showToast('↩ back to 2026.');});
+
+// friendly console note
+console.log('%cHi, view-source friend. 👋','color:#0a6cff;font:600 16px system-ui');
+console.log('%cI taught myself this stuff on GeoCities. Try the Konami code: ↑↑↓↓←→←→ B A','color:#6b7078;font:13px monospace');
+</script>
+</body>
+</html>test
