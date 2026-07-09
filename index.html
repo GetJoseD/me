@@ -188,6 +188,21 @@ h2.sec{font-family:var(--display);font-weight:600;font-size:clamp(28px,4vw,42px)
 .modal-body iframe{width:100%;height:64vh;border:0;background:#fff}
 .modal-fallback{padding:22px;font-family:var(--mono);font-size:13px;color:var(--slate);line-height:1.6}
 .modal-fallback a{color:var(--signal)}
+/* security before/after modal */
+.sec-card{width:min(820px,96vw)}
+.sec-body{display:grid;grid-template-columns:1fr 1fr;background:var(--paper)}
+.sec-col{padding:22px 22px 24px}
+.sec-before{background:#fbfbfd;border-right:1px solid var(--hair)}
+.sec-tag{font-family:var(--mono);font-size:11px;letter-spacing:.8px;text-transform:uppercase;margin-bottom:14px}
+.sec-before .sec-tag{color:#b23c3c}
+.sec-after .sec-tag{color:#1a8f4c}
+.sec-col ul{list-style:none;display:grid;gap:11px}
+.sec-col li{position:relative;padding-left:20px;font-size:13.5px;color:#33363d;line-height:1.5}
+.sec-before li::before{content:"–";position:absolute;left:2px;top:-1px;color:#c76b6b;font-weight:700}
+.sec-after li::before{content:"✓";position:absolute;left:0;top:1px;color:#1a8f4c;font-weight:700;font-size:12px}
+.sec-col li b{color:var(--ink);font-weight:600}
+.sec-note{margin-top:16px;font-family:var(--mono);font-size:11px;color:var(--slate);line-height:1.5}
+@media(max-width:620px){.sec-body{grid-template-columns:1fr}.sec-before{border-right:0;border-bottom:1px solid var(--hair)}}
 
 /* ---------- community ---------- */
 .comm-lead{max-width:66ch;color:var(--slate);font-size:17px}
@@ -201,7 +216,10 @@ h2.sec{font-family:var(--display);font-weight:600;font-size:clamp(28px,4vw,42px)
 .comm-body{padding:16px 17px 18px}
 .comm-body h4{font-family:var(--display);font-weight:600;font-size:16px;letter-spacing:-.01em;margin-bottom:6px}
 .comm-body p{color:var(--slate);font-size:13.5px;line-height:1.5}
-.comm-body .lk{margin-top:11px;font-family:var(--mono);font-size:11.5px;color:var(--signal);display:inline-flex;align-items:center;gap:6px}
+.lk-row{margin-top:12px;display:flex;flex-wrap:wrap;gap:7px 14px;align-items:center}
+.comm-body .lk{font-family:var(--mono);font-size:11.5px;color:var(--signal);display:inline-flex;align-items:center;gap:5px;transition:color .15s;background:none;border:0;padding:0;cursor:pointer}
+.comm-body a.lk:hover,.comm-body .lk-btn:hover{color:var(--ink)}
+.comm-body .lk-muted{color:var(--slate);cursor:default}
 .comm-foot{margin-top:30px;font-size:14.5px;color:var(--slate)}
 .comm-foot b{color:var(--ink)}
 
@@ -451,6 +469,37 @@ body.retro .retro-panel{display:block}
   </div>
 </div>
 
+<!-- security before/after modal -->
+<div class="modal" id="secModal" role="dialog" aria-modal="true" aria-label="Security: before and after">
+  <div class="modal-card sec-card">
+    <div class="modal-top">
+      <div class="mt">Small-business security — before &amp; after</div>
+      <button class="modal-close" id="secClose" aria-label="Close">×</button>
+    </div>
+    <div class="sec-body">
+      <div class="sec-col sec-before">
+        <div class="sec-tag">Before — fragile &amp; personal</div>
+        <ul>
+          <li>A mix of email accounts — some named for the business, some personal Gmail — with work and personal data intermingled.</li>
+          <li>Multi-factor authentication tied to <b>one person's personal phone</b>, using text-message codes.</li>
+          <li>Access couldn't be shared safely; a single staffing change could lock the business out of its own accounts.</li>
+          <li>Nothing could grow without being rebuilt from scratch.</li>
+        </ul>
+      </div>
+      <div class="sec-col sec-after">
+        <div class="sec-tag">Now — separated &amp; built to scale</div>
+        <ul>
+          <li>One dedicated business email, with personal accounts kept fully separate.</li>
+          <li>MFA moved to <b>Google Authenticator</b> instead of SMS — so access can be shared securely, not trapped on one phone.</li>
+          <li>Migrating to <b>Google Workspace</b> with a real business-domain address and separate managed accounts for devices, staff, and roles.</li>
+          <li>Systems that scale as the business grows — no more starting over.</li>
+        </ul>
+        <div class="sec-note">In progress — rolling out in stages so day-to-day operations never stop.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="toast" id="toast"></div>
 
 <script>
@@ -531,12 +580,26 @@ const certs = [
 ];
 
 const community = [
-  { img:"images/community-profiles.jpg", ph:"Google & Apple Business Connect", h:"Online identity & profiles", p:"Brand and listing management across Google Business Profile and Apple Business Connect — plus review management and response.", link:"https://share.google/tp62tPIk5lR3jVvvE", lk:"View listings" },
-  { img:"images/community-menu.jpg", ph:"Menu design & print", h:"Menu design & print", p:"Designed and printed the restaurant's menu end to end — layout, typography, and production.", link:"files/menu.pdf", lk:"See the menu" },
-  { img:"images/community-interior.jpg", ph:"The space", h:"Interior design (on a budget)", p:"Helped shape a space worth sharing — because a room people photograph is free, long-term marketing.", link:"#", lk:"See the space" },
-  { img:"images/community-systems.jpg", ph:"POS + delivery integration", h:"Systems & integration", p:"Tied POS (Toast, Shift4, Square) to online ordering and delivery (DoorDash, Uber Eats, Grubhub), including menu sync.", link:"#", lk:"How it connects" },
-  { img:"images/community-web.jpg", ph:"Website & content", h:"Website & content services", p:"Update and maintain their web presence, social media, and content — and advise on what to do next.", link:"https://phoevermn.com/", lk:"Visit the site" },
-  { img:"images/community-security.jpg", ph:"Small-business IT security", h:"Security & separation", p:"Separated work and personal systems so they can scale access safely without risking personal accounts.", link:"#", lk:"The approach" }
+  { img:"images/community-profiles.jpg", ph:"Google & Apple Business", h:"Online identity & profiles", p:"Brand and listing management across Google Business Profile and Apple Business Connect — plus review management and response.",
+    links:[
+      {label:"Google Profile", href:"https://share.google/eEAYuGhabUq6tBFTk"},
+      {label:"Google Maps", href:"https://maps.app.goo.gl/ZZ7ZtMUTZCd4fz916"},
+      {label:"Apple Maps", href:"https://maps.apple/p/LugQHWh_GM4y-B"}
+    ] },
+  { img:"images/community-menu.jpg", ph:"Menu design & print", h:"Menu design & print", p:"Designed and printed the restaurant's menu end to end — layout, typography, and production.",
+    links:[{label:"See the menu", href:"files/menu.pdf"}] },
+  { img:"images/community-interior.jpg", ph:"The space", h:"Interior design (on a budget)", p:"Helped shape a space worth sharing — because a room people photograph is free, long-term marketing.",
+    links:[{label:"See the space", href:"#"}] },
+  { img:"images/community-systems.jpg", ph:"POS + delivery integration", h:"Systems & integration", p:"Tied POS (Toast, Shift4, Square) to online ordering and delivery (DoorDash, Uber Eats, Grubhub), including menu sync.",
+    links:[{label:"How it connects", href:"#"}] },
+  { img:"images/community-web.jpg", ph:"Website, social & content", h:"Website, social & content", p:"I didn't build the site, but I keep it alive — refining content, refreshing photos, and making the changes their provider allows but they aren't comfortable doing themselves. I also run their social presence, design promotional images, and use AI to help generate and automate content.",
+    links:[
+      {label:"Website", href:"https://phoevermn.com"},
+      {label:"Facebook", href:"https://www.facebook.com/PhoeverMN"},
+      {label:"Instagram", href:"https://www.instagram.com/phoever_mn/"}
+    ] },
+  { img:"images/community-security.jpg", ph:"Security & separation", h:"Security & separation", p:"Separating work and personal systems so the business can scale without rebuilding — and so access can be shared safely, without risking anyone's personal accounts.",
+    modal:"security", modalLabel:"See before & after" }
 ];
 
 /* ---------------- RENDER ---------------- */
@@ -634,14 +697,32 @@ function openCert(c){
 function closeCert(){modal.classList.remove('open');modalFrame.src='';document.body.style.overflow='';}
 modalClose.addEventListener('click',closeCert);
 modal.addEventListener('click',e=>{if(e.target===modal)closeCert();});
-document.addEventListener('keydown',e=>{if(e.key==='Escape')closeCert();});
+
+// security before/after modal
+const secModal=document.getElementById('secModal'), secClose=document.getElementById('secClose');
+function openSecurity(){secModal.classList.add('open');document.body.style.overflow='hidden';}
+function closeSecurity(){secModal.classList.remove('open');document.body.style.overflow='';}
+secClose.addEventListener('click',closeSecurity);
+secModal.addEventListener('click',e=>{if(e.target===secModal)closeSecurity();});
+
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeCert();closeSecurity();}});
 
 // community
 const commGrid=document.getElementById('commGrid');
+function linkChip(l){
+  if(l.href==='#') return `<span class="lk lk-muted">${l.label}</span>`;
+  const ext = l.href.startsWith('http') ? 'target="_blank" rel="noopener"' : '';
+  return `<a class="lk" href="${l.href}" ${ext}>${l.label} ↗</a>`;
+}
 community.forEach(c=>{
-  commGrid.appendChild(el(`<a class="comm-card" href="${c.link}" ${c.link.startsWith('http')?'target="_blank" rel="noopener"':''}>
+  const foot = c.modal
+    ? `<div class="lk-row"><button class="lk lk-btn" type="button">${c.modalLabel} →</button></div>`
+    : `<div class="lk-row">${(c.links||[]).map(linkChip).join('')}</div>`;
+  const card = el(`<div class="comm-card">
     <div class="media"><div class="ph-label">${c.ph}</div><img src="${c.img}" alt="${c.h}" onerror="this.style.display='none'"></div>
-    <div class="comm-body"><h4>${c.h}</h4><p>${c.p}</p><span class="lk">${c.lk} →</span></div></a>`));
+    <div class="comm-body"><h4>${c.h}</h4><p>${c.p}</p>${foot}</div></div>`);
+  if(c.modal==='security') card.querySelector('.lk-btn').addEventListener('click',openSecurity);
+  commGrid.appendChild(card);
 });
 
 /* ---------------- MISC ---------------- */
