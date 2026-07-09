@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Interior — Bringing a little of Vietnam into the room · Jose "Joey" Diaz</title>
+<meta name="description" content="A budget-conscious, culturally-themed restaurant interior — cloth umbrellas and Vietnamese silk lanterns that hide corporate ceiling tiles and soften harsh lighting.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#14151a; --paper:#ffffff; --mist:#f4f5f7; --slate:#6b7078;
+  --hair:#dcdee3; --signal:#0a6cff; --deep:#0b0d12;
+  --sans:'Inter',system-ui,sans-serif; --display:'Space Grotesk','Inter',sans-serif; --mono:'IBM Plex Mono',ui-monospace,monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.wrap{max-width:1120px;margin:0 auto;padding:0 28px}
+
+.nav{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.85);backdrop-filter:saturate(1.4) blur(12px);border-bottom:1px solid var(--hair)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{font-family:var(--mono);font-weight:500;font-size:14px;display:flex;align-items:center;gap:9px}
+.brand .dot{width:8px;height:8px;background:var(--signal);border-radius:2px}
+.back{font-family:var(--mono);font-size:13px;color:var(--slate);transition:color .2s}
+.back:hover{color:var(--signal)}
+
+.eyebrow{font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:2.5px;text-transform:uppercase;color:var(--signal);display:inline-flex;align-items:center;gap:9px}
+.eyebrow::before{content:"";width:22px;height:1px;background:var(--signal)}
+.head{padding:70px 0 30px}
+.head h1{font-family:var(--display);font-weight:700;font-size:clamp(30px,5vw,50px);letter-spacing:-.03em;line-height:1.04;margin:18px 0 22px;max-width:20ch}
+.head h1 .sig{color:var(--signal)}
+.lede{max-width:70ch;color:#33363d;font-size:17px;display:grid;gap:16px}
+.lede b{font-weight:600;color:var(--ink)}
+.meta{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px}
+.tagm{font-family:var(--mono);font-size:11px;color:var(--slate);border:1px solid var(--hair);border-radius:7px;padding:5px 10px}
+
+.gallery{padding:34px 0 90px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px}
+.shot{position:relative;aspect-ratio:4/3;border:1px solid var(--hair);border-radius:14px;overflow:hidden;cursor:pointer;background:linear-gradient(140deg,#eef1f6,#e2e9f5);padding:0;font:inherit}
+.shot img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease;position:relative;z-index:2}
+.shot:hover img{transform:scale(1.05)}
+.shot .ph{position:absolute;inset:0;z-index:1;display:flex;align-items:center;justify-content:center;color:var(--slate);font-family:var(--mono);font-size:11px;letter-spacing:.4px;text-align:center;padding:14px}
+.shot .zoom{position:absolute;right:10px;bottom:10px;z-index:3;background:rgba(11,13,18,.72);color:#fff;font-family:var(--mono);font-size:11px;padding:4px 8px;border-radius:7px;opacity:0;transition:.2s}
+.shot:hover .zoom{opacity:1}
+
+/* lightbox */
+.lb{position:fixed;inset:0;z-index:80;background:rgba(11,13,18,.92);display:none;align-items:center;justify-content:center}
+.lb.open{display:flex}
+.lb img{max-width:92vw;max-height:86vh;object-fit:contain;border-radius:8px;box-shadow:0 30px 90px -20px #000}
+.lb-btn{position:absolute;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.25);color:#fff;width:46px;height:46px;border-radius:50%;font-size:22px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:.2s}
+.lb-btn:hover{background:rgba(255,255,255,.22)}
+.lb-close{top:22px;right:22px}
+.lb-prev{left:20px;top:50%;transform:translateY(-50%)}
+.lb-next{right:20px;top:50%;transform:translateY(-50%)}
+.lb-count{position:absolute;bottom:24px;left:50%;transform:translateX(-50%);font-family:var(--mono);font-size:12px;color:#cfd3da}
+
+footer{background:var(--deep);color:#7a8291;border-top:1px solid #1c2130}
+footer .wrap{display:flex;justify-content:space-between;align-items:center;padding:24px 28px;flex-wrap:wrap;gap:10px;font-family:var(--mono);font-size:12px}
+footer a{color:#9aa3b2}
+footer a:hover{color:#fff}
+@media(max-width:620px){.lb-prev{left:8px}.lb-next{right:8px}}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap">
+    <a class="brand" href="index.html"><span class="dot"></span>JOSE&nbsp;DIAZ<span style="color:var(--slate)">.dev</span></a>
+    <a class="back" href="index.html#community">← Back to community</a>
+  </div>
+</nav>
+
+<header class="head">
+  <div class="wrap">
+    <span class="eyebrow">Community · Interior design</span>
+    <h1>Bringing a little of Vietnam into the room — <span class="sig">on a budget.</span></h1>
+    <div class="lede">
+      <p>The ownership here is deliberately <b>budget-conscious</b> — and that's not a limitation so much as a design brief. Because we source cultural pieces online at low cost and buy in batches, a tight budget still adds up to a space with real character.</p>
+      <p>The ceiling tells the story best. The room came with a standard corporate drop-ceiling and hard fluorescent lighting, and the landlord won't replace the tiles or swap the fixtures. So we hung <b>Asian-themed cloth umbrellas</b> across it — they hide the grid overhead and <b>diffuse the harsh light</b> into something warm. <b>Vietnamese silk lanterns</b> hang alongside them, adding color and a sense of place.</p>
+      <p>The idea is simple: bring little pieces of Vietnam into the restaurant, one affordable, intentional piece at a time. A room people <i>want</i> to photograph and share is free, long-term marketing — and there's more planned as the budget allows.</p>
+    </div>
+    <div class="meta">
+      <span class="tagm">Sourced online · bought in batches</span>
+      <span class="tagm">Cloth umbrellas · silk lanterns</span>
+      <span class="tagm">Light diffusion</span>
+      <span class="tagm">More to come</span>
+    </div>
+  </div>
+</header>
+
+<section class="gallery">
+  <div class="wrap">
+    <div class="grid" id="grid"></div>
+  </div>
+</section>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Photo viewer">
+  <button class="lb-btn lb-close" id="lbClose" aria-label="Close">×</button>
+  <button class="lb-btn lb-prev" id="lbPrev" aria-label="Previous">‹</button>
+  <img id="lbImg" src="" alt="Interior photo">
+  <button class="lb-btn lb-next" id="lbNext" aria-label="Next">›</button>
+  <div class="lb-count" id="lbCount"></div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div>© <span id="yr"></span> Jose "Joey" Diaz</div>
+    <div><a href="index.html#community">← Community</a></div>
+  </div>
+</footer>
+
+<script>
+const PHOTOS = Array.from({length:8},(_,i)=>`images/interior-${i+1}.jpg`);
+const grid=document.getElementById('grid');
+PHOTOS.forEach((src,i)=>{
+  const b=document.createElement('button');
+  b.className='shot'; b.dataset.i=i;
+  b.innerHTML=`<span class="ph">add images/interior-${i+1}.jpg</span>
+    <img src="${src}" alt="Restaurant interior photo ${i+1}" loading="lazy" onerror="this.style.display='none'">
+    <span class="zoom">↗ view</span>`;
+  b.addEventListener('click',()=>openLb(i));
+  grid.appendChild(b);
+});
+
+const lb=document.getElementById('lb'), lbImg=document.getElementById('lbImg'),
+      lbCount=document.getElementById('lbCount');
+let cur=0;
+function openLb(i){cur=i;update();lb.classList.add('open');document.body.style.overflow='hidden';}
+function closeLb(){lb.classList.remove('open');document.body.style.overflow='';}
+function update(){lbImg.src=PHOTOS[cur];lbCount.textContent=`${cur+1} / ${PHOTOS.length}`;}
+function step(d){cur=(cur+d+PHOTOS.length)%PHOTOS.length;update();}
+document.getElementById('lbClose').addEventListener('click',closeLb);
+document.getElementById('lbPrev').addEventListener('click',()=>step(-1));
+document.getElementById('lbNext').addEventListener('click',()=>step(1));
+lb.addEventListener('click',e=>{if(e.target===lb)closeLb();});
+document.addEventListener('keydown',e=>{
+  if(!lb.classList.contains('open'))return;
+  if(e.key==='Escape')closeLb(); if(e.key==='ArrowLeft')step(-1); if(e.key==='ArrowRight')step(1);
+});
+document.getElementById('yr').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
