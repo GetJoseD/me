@@ -203,6 +203,26 @@ h2.sec{font-family:var(--display);font-weight:600;font-size:clamp(28px,4vw,42px)
 .sec-col li b{color:var(--ink);font-weight:600}
 .sec-note{margin-top:16px;font-family:var(--mono);font-size:11px;color:var(--slate);line-height:1.5}
 @media(max-width:620px){.sec-body{grid-template-columns:1fr}.sec-before{border-right:0;border-bottom:1px solid var(--hair)}}
+/* systems journey modal */
+.sys-card{width:min(760px,96vw)}
+.sys-body{padding:22px 24px 26px;background:var(--paper);flex:1;min-height:0;overflow-y:auto}
+.sys-intro{font-size:15px;color:#33363d;line-height:1.55;margin-bottom:8px}
+.sys-intro b{color:var(--ink);font-weight:600}
+.sys-block{padding:16px 0;border-top:1px solid var(--hair)}
+.sys-block .lab{font-family:var(--mono);font-size:11px;letter-spacing:1.3px;text-transform:uppercase;margin-bottom:11px}
+.sys-started .lab{color:#b23c3c}
+.sys-now .lab{color:#1a8f4c}
+.sys-next .lab{color:var(--signal)}
+.sys-block ul{list-style:none;display:grid;gap:9px}
+.sys-block li{position:relative;padding-left:18px;font-size:14px;color:#33363d;line-height:1.5}
+.sys-block li::before{content:"";position:absolute;left:2px;top:8px;width:5px;height:5px;border-radius:50%}
+.sys-started li::before{background:#c76b6b}
+.sys-now li::before{background:#1a8f4c}
+.sys-next li::before{background:var(--signal)}
+.sys-block li b{color:var(--ink);font-weight:600}
+.sys-insight{margin-top:20px;background:var(--mist);border-radius:12px;padding:15px 16px;font-size:13.5px;color:#33363d;line-height:1.55}
+.sys-insight b{color:var(--ink);font-weight:600}
+.sys-insight .qi{font-family:var(--mono);font-size:10.5px;letter-spacing:1px;text-transform:uppercase;color:var(--signal);display:block;margin-bottom:6px}
 
 /* ---------- community ---------- */
 .comm-lead{max-width:66ch;color:var(--slate);font-size:17px}
@@ -500,6 +520,44 @@ body.retro .retro-panel{display:block}
   </div>
 </div>
 
+<!-- systems journey modal -->
+<div class="modal" id="sysModal" role="dialog" aria-modal="true" aria-label="Systems and integration journey">
+  <div class="modal-card sys-card">
+    <div class="modal-top">
+      <div class="mt">Systems &amp; integration — scattered to scalable</div>
+      <button class="modal-close" id="sysClose" aria-label="Close">×</button>
+    </div>
+    <div class="sys-body">
+      <p class="sys-intro">When I started helping them, every ordering service ran on its <b>own separate device</b> — and keeping them all running and updated was a constant fight. Multiple delivery apps, plus the POS, plus Google: a single menu price change meant logging into each system by hand.</p>
+      <div class="sys-block sys-started">
+        <div class="lab">Where they started</div>
+        <ul>
+          <li>A separate device for <b>each</b> delivery service, alongside the POS and the Google listing.</li>
+          <li>One small price change could take <b>an hour or more</b> — updated system by system, by hand.</li>
+          <li>Fragile, easy to miss a spot, and nearly impossible to keep consistent.</li>
+        </ul>
+      </div>
+      <div class="sys-block sys-now">
+        <div class="lab">Where they are now</div>
+        <ul>
+          <li>We use <b>Shift4</b> to power all of their delivery menus from one place — update once, push everywhere.</li>
+          <li>Fewer devices, one source of truth, and far less daily maintenance.</li>
+        </ul>
+      </div>
+      <div class="sys-block sys-next">
+        <div class="lab">What's next</div>
+        <ul>
+          <li>Integrate <b>Owner.com</b> so menu updates flow through automatically.</li>
+          <li>Better menu-item photography, so the listings actually sell.</li>
+          <li>Managed <b>sales campaigns</b> across the delivery services to win new and repeat customers.</li>
+          <li><b>QR-code ordering and payment</b> to offset low staffing — plus a drinks-focused kiosk.</li>
+        </ul>
+      </div>
+      <div class="sys-insight"><span class="qi">Why it matters</span>Most owners who adopt systems one at a time <b>never integrate them</b> — they don't know how, or they're afraid to break something that already works, even when it's inefficient. Closing that gap is the whole point.</div>
+    </div>
+  </div>
+</div>
+
 <div class="toast" id="toast"></div>
 
 <script>
@@ -589,9 +647,9 @@ const community = [
   { img:"images/community-menu.jpg", ph:"Menu design & print", h:"Menu design & print", p:"Designed and printed the restaurant's menu end to end — layout, typography, and production.",
     links:[{label:"See the menu", href:"files/menu.pdf"}] },
   { img:"images/community-interior.jpg", ph:"The space", h:"Interior design (on a budget)", p:"Helped shape a space worth sharing — because a room people photograph is free, long-term marketing.",
-    links:[{label:"See the space", href:"#"}] },
+    links:[{label:"See the space", href:"interior.html"}] },
   { img:"images/community-systems.jpg", ph:"POS + delivery integration", h:"Systems & integration", p:"Tied POS (Toast, Shift4, Square) to online ordering and delivery (DoorDash, Uber Eats, Grubhub), including menu sync.",
-    links:[{label:"How it connects", href:"#"}] },
+    modal:"systems", modalLabel:"See the journey" },
   { img:"images/community-web.jpg", ph:"Website, social & content", h:"Website, social & content", p:"I didn't build the site, but I keep it alive — refining content, refreshing photos, and making the changes their provider allows but they aren't comfortable doing themselves. I also run their social presence, design promotional images, and use AI to help generate and automate content.",
     links:[
       {label:"Website", href:"https://phoevermn.com"},
@@ -705,7 +763,14 @@ function closeSecurity(){secModal.classList.remove('open');document.body.style.o
 secClose.addEventListener('click',closeSecurity);
 secModal.addEventListener('click',e=>{if(e.target===secModal)closeSecurity();});
 
-document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeCert();closeSecurity();}});
+// systems journey modal
+const sysModal=document.getElementById('sysModal'), sysClose=document.getElementById('sysClose');
+function openSystems(){sysModal.classList.add('open');document.body.style.overflow='hidden';}
+function closeSystems(){sysModal.classList.remove('open');document.body.style.overflow='';}
+sysClose.addEventListener('click',closeSystems);
+sysModal.addEventListener('click',e=>{if(e.target===sysModal)closeSystems();});
+
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeCert();closeSecurity();closeSystems();}});
 
 // community
 const commGrid=document.getElementById('commGrid');
@@ -721,7 +786,7 @@ community.forEach(c=>{
   const card = el(`<div class="comm-card">
     <div class="media"><div class="ph-label">${c.ph}</div><img src="${c.img}" alt="${c.h}" onerror="this.style.display='none'"></div>
     <div class="comm-body"><h4>${c.h}</h4><p>${c.p}</p>${foot}</div></div>`);
-  if(c.modal==='security') card.querySelector('.lk-btn').addEventListener('click',openSecurity);
+  if(c.modal){ const fn={security:openSecurity,systems:openSystems}[c.modal]; if(fn) card.querySelector('.lk-btn').addEventListener('click',fn); }
   commGrid.appendChild(card);
 });
 
