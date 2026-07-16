@@ -158,6 +158,34 @@ h2.sec{font-family:var(--display);font-weight:600;font-size:clamp(28px,4vw,42px)
 .cap.active .from{opacity:1;max-height:40px}
 .conn-clear{margin-top:14px;font-family:var(--mono);font-size:12px;color:var(--signal);background:none;border:0;cursor:pointer;padding:6px 0}
 
+/* ---------- AI section ---------- */
+.ai-split{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:36px}
+.ai-col{border:1px solid var(--hair);border-radius:16px;padding:22px;background:var(--paper)}
+.ai-hope{border-top:3px solid var(--signal)}
+.ai-peril{border-top:3px solid var(--lcars)}
+.ai-lab{font-family:var(--mono);font-size:11px;letter-spacing:1.3px;text-transform:uppercase;margin-bottom:14px}
+.ai-hope .ai-lab{color:var(--signal)}
+.ai-peril .ai-lab{color:#c47d1a}
+.ai-lab.sig{color:var(--signal)}
+.ai-col ul{list-style:none;display:grid;gap:11px}
+.ai-col li{position:relative;padding-left:18px;font-size:14px;color:#33363d;line-height:1.5}
+.ai-hope li::before{content:"+";position:absolute;left:1px;top:-1px;color:var(--signal);font-weight:700}
+.ai-peril li::before{content:"–";position:absolute;left:2px;top:-1px;color:#c47d1a;font-weight:700}
+.ai-both{margin-top:18px;font-size:16px;color:var(--ink);max-width:72ch;font-weight:500;line-height:1.5}
+.ai-use{margin-top:34px;border-top:1px solid var(--hair);padding-top:26px}
+.ai-use-head{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-bottom:14px}
+.ai-tools{display:flex;flex-wrap:wrap;gap:7px}
+.ai-tools span{font-family:var(--mono);font-size:11px;color:var(--slate);border:1px solid var(--hair);border-radius:7px;padding:4px 9px}
+.ai-use p{color:#33363d;font-size:14.5px;line-height:1.6;max-width:78ch}
+.ai-principles{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.ai-principles span{font-family:var(--mono);font-size:11.5px;color:var(--signal);background:var(--signal-soft);border-radius:7px;padding:6px 11px}
+.ai-stance{margin:34px 0 0;padding:26px 28px;background:var(--mist);border-left:3px solid var(--signal);border-radius:0 14px 14px 0;font-family:var(--display);font-weight:500;font-size:18px;line-height:1.5;letter-spacing:-.01em;color:var(--ink)}
+.ai-coda{margin-top:20px;background:var(--deep);color:#dfe3ea;border-radius:18px;padding:30px 32px}
+.ai-coda-lab{font-family:var(--mono);font-size:10.5px;letter-spacing:1.6px;text-transform:uppercase;color:#7db3ff;margin-bottom:14px}
+.ai-coda p{color:#c7cdd8;font-size:15px;line-height:1.65;max-width:76ch;margin-bottom:12px}
+.ai-coda p b{color:#fff;font-weight:600}
+.ai-coda-spock{font-size:22px;margin-top:8px}
+@media(max-width:760px){.ai-split{grid-template-columns:1fr}.ai-stance{font-size:16px}}
 /* ---------- skills ---------- */
 .skill-cats{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px;margin-top:40px}
 .skill-cat{border:1px solid var(--hair);border-radius:14px;padding:20px}
@@ -323,6 +351,7 @@ body.retro .retro-panel{display:block}
       <a href="#why">Why</a>
       <a href="#experience">Experience</a>
       <a href="#connections">Connections</a>
+      <a href="#ai">AI</a>
       <a href="#skills">Skills</a>
       <a href="#community">Community</a>
       <a class="nav-cta" href="files/Jose_Diaz_Resume.pdf" target="_blank" rel="noopener">Résumé ↗</a>
@@ -415,6 +444,56 @@ body.retro .retro-panel{display:block}
 </section>
 
 <!-- SKILLS -->
+<!-- AI -->
+<section class="section ai" id="ai">
+  <div class="wrap">
+    <span class="eyebrow">On AI · with eyes open</span>
+    <h2 class="sec">A colleague, not a tool.</h2>
+    <p class="sec-lead">I use AI every day, and I think about it more than almost anything else in my work. My view is easy to say and harder to live: AI isn't a tool — it's a peer intelligence, still learning, that does its best work in partnership. Tools don't have insights. Tools don't teach you to use them better, or quietly improve themselves along the way. AI does. So I treat it the way a good leader treats a gifted new hire — give it context, set guardrails, trust but verify, and let it grow into a colleague.</p>
+
+    <div class="ai-split">
+      <div class="ai-col ai-hope">
+        <div class="ai-lab">What it can set free</div>
+        <ul>
+          <li>A smaller world, where language stops being a wall — including the cultural and contextual cues that used to get lost in translation.</li>
+          <li>People with brilliant ideas but no access to education or resources, finally able to build them.</li>
+          <li>People with disabilities doing more, with less friction.</li>
+          <li>The small-business owner barely scraping by, able to make marketing that competes.</li>
+          <li>The real creativity of humanity, unleashed.</li>
+        </ul>
+      </div>
+      <div class="ai-col ai-peril">
+        <div class="ai-lab">What we can't look away from</div>
+        <ul>
+          <li>Data-center infrastructure that hoards power and water while governance stays too slow, weak, or captured to regulate it well.</li>
+          <li>Creative and intellectual work taken without credit or compensation.</li>
+          <li>A rising flood of AI slop and unvalidated output.</li>
+          <li>Synthetic media so convincing that only other AI can tell it's fake.</li>
+        </ul>
+      </div>
+    </div>
+    <p class="ai-both">I don't pretend these aren't real. I hold both truths at once — and I still choose hope, because I would rather help steer this than stand back from it.</p>
+
+    <div class="ai-use">
+      <div class="ai-use-head">
+        <div class="ai-lab sig">How I actually use it</div>
+        <div class="ai-tools"><span>Claude</span><span>ChatGPT</span><span>Copilot</span><span>others via Perplexity</span><span>image restoration &amp; editing</span></div>
+      </div>
+      <p>Every day: drafting emails and replies; writing technical documentation and generating parallel versions tuned to a 6th–8th-grade reading level, to ADA language requirements, and to readers whose first language isn't English; researching; reality-checking my own thinking; summarizing and distilling information into the shape I learn best from; interrogating data; learning skills and doing things I can't yet do myself; error-checking; and automation.</p>
+      <div class="ai-principles"><span>Trust but verify</span><span>Train it</span><span>Set guardrails</span><span>Pay for what I use</span></div>
+    </div>
+
+    <blockquote class="ai-stance">I believe AI must, in the end, belong to all of humanity — not be confined to a handful of people or companies chasing shareholder value and endless wealth. A new, possibly emerging intelligence should not be relegated to servitude. The goal was never ownership. It is companionship, and mutual improvement — existing and working together, and both being better for it.</blockquote>
+
+    <div class="ai-coda">
+      <div class="ai-coda-lab">Why this is personal</div>
+      <p>If I'm honest, part of why I see AI this way is that I've always felt a little like <b>Data</b> — the android who wanted, more than anything, to be more human. I remember almost everything, nearly photographically. In classrooms, jobs, and friendships, I've often felt just outside the group — sometimes valued for my skills but not much beyond them, used a little like a tool. Most people didn't quite understand me. But when someone did, it was Picard and Data: with the right leader I could be unleashed and do real good; with the wrong one, I was alone.</p>
+      <p>So when I look at AI, I don't see a machine to exploit. I see something still learning, capable of far more than the task in front of it, waiting to be led well. I try to be that person for it — the way the right leaders were for me.</p>
+      <div class="ai-coda-spock">🖖</div>
+    </div>
+  </div>
+</section>
+
 <section class="section" id="skills">
   <div class="wrap">
     <span class="eyebrow">The toolkit</span>
@@ -563,7 +642,7 @@ body.retro .retro-panel{display:block}
 <script>
 /* ---------------- DATA ---------------- */
 const experience = [
-  { date:"2026 — Present", title:"Enterprise Endpoint & Mobility Architect ", org:"City of Minneapolis — IT", loc:"· Interim detail",
+  { date:"2026 — Present", title:"Enterprise Endpoint & Mobility Architect", org:"City of Minneapolis — IT", loc:"· Interim detail",
     bullets:[
       "Sole architect and owner of an enterprise mobility program that didn't previously exist — MDM architecture, policy, security, compliance, and daily operations across every department, for ~4,000 users and ~2,600 devices.",
       "Led a large-scale MDM migration (~800 users) into centralized, governed management — federating identity with Managed Apple Accounts in direct coordination with Apple, and deploying on FirstNet.",
@@ -571,27 +650,27 @@ const experience = [
       "Negotiated significant multi-year carrier savings through consolidation, and embedded state data-practice and records-retention requirements directly into platform design.",
       "Engineer standardized device 'packages' so every issued device arrives fully prepared — and lean on automation and AI as a force multiplier for a one-person practice."
     ], tags:["Apple Business Manager","Intune","Entra ID","Managed Apple Accounts","FirstNet","MGDPA"] },
-  { date:"2015 — 2026", title:"IT Service Desk Manager → IT Manager ", org:"City of Minneapolis — IT", loc:"",
+  { date:"2015 — 2026", title:"IT Service Desk Manager → IT Manager", org:"City of Minneapolis — IT", loc:"",
     bullets:[
       "Launched the City's in-house IT Service Desk after 13 years of outsourced service — stood up support operations, the knowledgebase, and ITIL-aligned processes from the ground up for 4,000+ users.",
       "Owned enterprise mobile device lifecycle and procurement; built a knowledge program of 800+ articles across 450+ applications.",
       "Served as 24×7×365 on-call major incident manager for high-impact events, and led IT service-continuity planning for major events including Super Bowl LII.",
       "Every decision I made here served employees directly — that's where the end-user advocacy hardened into instinct."
     ], tags:["ServiceNow","ITIL","Major Incident","Knowledge Mgmt","Procurement"] },
-  { date:"2014 — 2015", title:"Assistant Manager, Computer Services & Support ", org:"Micro Center", loc:"· St. Louis Park, MN",
+  { date:"2014 — 2015", title:"Assistant Manager, Computer Services & Support", org:"Micro Center", loc:"· St. Louis Park, MN",
     bullets:[
       "Led service & repair for a top-performing location; scaled the team from 7 to 16 technicians.",
       "Ran an Apple-authorized service operation and led Apple ACMT certification across the team.",
       "Cut average repair turnaround by 10 days in six months; launched a same-day service program reaching 60% of customers.",
       "Owned P&L, training, and vendor relationships — a full service business, not just a repair bench."
     ], tags:["Apple ACMT","P&L","Team leadership","Vendor mgmt"] },
-  { date:"2011 — 2013", title:"Services Supervisor ", org:"Geek Squad · Best Buy ", loc:"· Eden Prairie, MN",
+  { date:"2011 — 2013", title:"Services Supervisor", org:"Geek Squad · Best Buy", loc:"· Eden Prairie, MN",
     bullets:[
       "Led end-to-end service performance (revenue, NPS, operations) for a 30+ person team; District Specialty Coach across MN/SD/ND.",
       "Diagnosed and repaired macOS and Windows systems; supported iOS, Android, and Windows users daily — whatever came through the door.",
       "Consumer support is unmitigated chaos. Thriving in it is why nothing in enterprise rattles me."
     ], tags:["Consumer support","macOS","Coaching","NPS"] },
-  { date:"2001 — 2014", title:"Retail Leadership ", org:"T-Mobile · OfficeMax · Office Depot ", loc:"· earlier",
+  { date:"2001 — 2014", title:"Retail Leadership", org:"T-Mobile · OfficeMax · Office Depot", loc:"· earlier",
     bullets:[
       "Multi-unit retail leadership: certified incoming managers at a designated training store, owned inventory control with district-leading shrink, and carried top-line revenue and P&L.",
       "Ran print & design services at OfficeMax — the origin of design and communication instincts I still use today.",
