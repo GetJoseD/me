@@ -158,6 +158,12 @@ h2.sec{font-family:var(--display);font-weight:600;font-size:clamp(28px,4vw,42px)
 .cap.active .from{opacity:1;max-height:40px}
 .conn-clear{margin-top:14px;font-family:var(--mono);font-size:12px;color:var(--signal);background:none;border:0;cursor:pointer;padding:6px 0}
 
+html[data-ui-lang="en"] [data-lang="vi"]{display:none!important}
+html[data-ui-lang="vi"] [data-lang="en"]{display:none!important}
+.langtog{display:inline-flex;border:1px solid var(--hair);border-radius:8px;overflow:hidden}
+.langtog button{font-family:var(--mono);font-size:11px;letter-spacing:.5px;padding:7px 10px;background:none;border:0;cursor:pointer;color:var(--slate);transition:.15s}
+.langtog button.on{background:var(--ink);color:#fff}
+.foot-note{max-width:var(--maxw);margin:0 auto;padding:2px 28px 24px;font-family:var(--mono);font-size:11px;color:#7a8291;text-align:center;line-height:1.5}
 /* ---------- AI section ---------- */
 .ai-split{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:36px}
 .ai-col{border:1px solid var(--hair);border-radius:16px;padding:22px;background:var(--paper)}
@@ -354,6 +360,7 @@ body.retro .retro-panel{display:block}
       <a href="#ai">AI</a>
       <a href="#skills">Skills</a>
       <a href="#community">Community</a>
+      <div class="langtog" id="langTog"><button data-lang-set="en" class="on">EN</button><button data-lang-set="vi">VN</button></div>
       <a class="nav-cta" href="files/Jose_Diaz_Resume.pdf" target="_blank" rel="noopener">Résumé ↗</a>
     </div>
   </div>
@@ -364,18 +371,18 @@ body.retro .retro-panel{display:block}
   <div class="wrap">
     <div class="hero-grid">
       <div>
-        <span class="eyebrow">Enterprise Endpoint &amp; Mobility · Apple Device Management</span>
-        <h1>I build the systems that let people <span class="sig">forget technology exists.</span></h1>
-        <p class="hero-sub">I'm <b>Jose "Joey" Diaz</b> — an enterprise Apple &amp; mobility architect and lifelong end-user advocate. I take unfamiliar platforms and turn them into <b>governed, humane systems</b> people never have to think about. I don't crave control; I crave results.</p>
+        <span class="eyebrow"><span data-lang="en">Enterprise Endpoint &amp; Mobility · Apple Device Management</span><span data-lang="vi">Thiết bị đầu cuối &amp; Di động Doanh nghiệp · Quản lý thiết bị Apple</span></span>
+        <h1><span data-lang="en">I build the systems that let people <span class="sig">forget technology exists.</span></span><span data-lang="vi">Tôi xây những hệ thống để người ta <span class="sig">quên rằng công nghệ tồn tại.</span></span></h1>
+        <p class="hero-sub"><span data-lang="en">I'm <b>Jose "Joey" Diaz</b> — an enterprise Apple &amp; mobility architect and lifelong end-user advocate. I take unfamiliar platforms and turn them into <b>governed, humane systems</b> people never have to think about. I don't crave control; I crave results.</span><span data-lang="vi">Tôi là <b>Jose "Joey" Diaz</b> — một kiến trúc sư Apple &amp; di động doanh nghiệp và là người luôn bênh vực người dùng cuối. Tôi nhận những nền tảng xa lạ và biến chúng thành <b>những hệ thống được quản trị, nhân văn</b> mà người dùng không bao giờ phải bận tâm. Tôi không khao khát quyền kiểm soát; tôi khao khát kết quả.</span></p>
         <div class="hero-cta">
-          <a class="btn btn-primary" href="files/Jose_Diaz_Resume.pdf" target="_blank" rel="noopener">Download résumé <span>↗</span></a>
-          <a class="btn btn-ghost" href="#connections">See how it connects <span>→</span></a>
+          <a class="btn btn-primary" href="files/Jose_Diaz_Resume.pdf" target="_blank" rel="noopener"><span data-lang="en">Download résumé <span>↗</span></span><span data-lang="vi">Tải résumé <span>↗</span></span></a>
+          <a class="btn btn-ghost" href="#connections"><span data-lang="en">See how it connects <span>→</span></span><span data-lang="vi">Xem cách mọi thứ kết nối <span>→</span></span></a>
         </div>
         <div class="readouts">
-          <div class="readout"><div class="n">20+ yrs</div><div class="l">Tech &amp; ops</div></div>
-          <div class="readout"><div class="n">~4,000</div><div class="l">Users supported</div></div>
-          <div class="readout"><div class="n">~2,600</div><div class="l">Devices managed</div></div>
-          <div class="readout"><div class="n">Team of 1</div><div class="l">Built from zero</div></div>
+          <div class="readout"><div class="n">20+ yrs</div><div class="l"><span data-lang="en">Tech &amp; ops</span><span data-lang="vi">Công nghệ &amp; vận hành</span></div></div>
+          <div class="readout"><div class="n">~4,000</div><div class="l"><span data-lang="en">Users supported</span><span data-lang="vi">Người dùng được hỗ trợ</span></div></div>
+          <div class="readout"><div class="n">~2,600</div><div class="l"><span data-lang="en">Devices managed</span><span data-lang="vi">Thiết bị quản lý</span></div></div>
+          <div class="readout"><div class="n">Team of 1</div><div class="l"><span data-lang="en">Built from zero</span><span data-lang="vi">Xây từ số không</span></div></div>
         </div>
       </div>
       <div class="portrait">
@@ -384,7 +391,7 @@ body.retro .retro-panel{display:block}
           add images/profile.jpg
         </div>
         <img src="images/profile.jpg" alt="Jose &quot;Joey&quot; Diaz" onerror="this.style.display='none'">
-        <span class="tag">Minneapolis · open to SF Bay Area</span>
+        <span class="tag"><span data-lang="en">Minneapolis · open to SF Bay Area</span><span data-lang="vi">Minneapolis · sẵn sàng đến Vùng Vịnh SF</span></span>
       </div>
     </div>
   </div>
@@ -393,35 +400,35 @@ body.retro .retro-panel{display:block}
 <!-- WHY -->
 <section class="why" id="why">
   <div class="wrap">
-    <span class="eyebrow on-dark">Start with why</span>
-    <h2 class="sec">Belief before product.</h2>
+    <span class="eyebrow on-dark"><span data-lang="en">Start with why</span><span data-lang="vi">Bắt đầu từ lý do</span></span>
+    <h2 class="sec"><span data-lang="en">Belief before product.</span><span data-lang="vi">Niềm tin trước sản phẩm.</span></h2>
     <div class="golden">
       <div class="rings" aria-hidden="true">
-        <div class="ring r1"><span>What</span></div>
-        <div class="ring r2"><span>How</span></div>
-        <div class="ring r3"><span>Why</span></div>
+        <div class="ring r1"><span data-lang="en"><span>What</span></span><span data-lang="vi"><span>Gì</span></span></div>
+        <div class="ring r2"><span data-lang="en"><span>How</span></span><span data-lang="vi"><span>Cách</span></span></div>
+        <div class="ring r3"><span data-lang="en"><span>Why</span></span><span data-lang="vi"><span>Lý do</span></span></div>
         <div class="core"></div>
       </div>
       <div class="why-copy">
-        <p>Simon Sinek's Golden Circle taught me something that stuck for fifteen years: <b>people invest in <i>why</i> you do the work, not just <i>what</i> the work is.</b> It's more rewarding, and far more stable, to serve people who believe what you believe than to sell to people who don't.</p>
-        <p>My jobs have changed. The belief hasn't: <b>technology should be so easy, advanced, and convenient that the person using it never has to think about it</b> — and someone should always be fighting for that person. Enterprise IT too often forgets who it's for. I don't.</p>
+        <p><span data-lang="en">Simon Sinek's Golden Circle taught me something that stuck for fifteen years: <b>people invest in <i>why</i> you do the work, not just <i>what</i> the work is.</b> It's more rewarding, and far more stable, to serve people who believe what you believe than to sell to people who don't.</span><span data-lang="vi">Vòng tròn Vàng của Simon Sinek đã dạy tôi một điều đọng lại suốt mười lăm năm: <b>người ta đầu tư vào <i>lý do</i> bạn làm công việc, chứ không chỉ <i>việc</i> bạn làm.</b> Phục vụ những người tin vào điều bạn tin sẽ ý nghĩa hơn, và bền vững hơn nhiều, so với việc bán cho những người không tin.</span></p>
+        <p><span data-lang="en">My jobs have changed. The belief hasn't: <b>technology should be so easy, advanced, and convenient that the person using it never has to think about it</b> — and someone should always be fighting for that person. Enterprise IT too often forgets who it's for. I don't.</span><span data-lang="vi">Công việc của tôi đã thay đổi. Niềm tin thì không: <b>công nghệ nên dễ dàng, tân tiến và tiện lợi đến mức người dùng không bao giờ phải nghĩ về nó</b> — và luôn cần một ai đó đấu tranh cho người dùng ấy. CNTT doanh nghiệp quá thường quên mất mình phục vụ ai. Tôi thì không.</span></p>
       </div>
     </div>
     <div class="why-lines">
-      <div class="why-line"><div class="k">Why</div><div class="v">Great technology should <b>disappear</b> in service of the people who use it — and everyone deserves an advocate inside the system.</div></div>
-      <div class="why-line"><div class="k">How</div><div class="v">Build from first principles when no path exists. Advocate for the end user, always. Turn chaos into <b>governed, supportable</b> systems.</div></div>
-      <div class="why-line"><div class="k">What</div><div class="v">Enterprise Apple &amp; mobility architecture, MDM, endpoint governance — and the daily craft of making devices <b>just work</b>.</div></div>
+      <div class="why-line"><span data-lang="en"><div class="k">Why</div></span><span data-lang="vi"><div class="k"><span data-lang="en">Why</span><span data-lang="vi">Lý do</span></div></span><div class="v"><span data-lang="en">Great technology should <b>disappear</b> in service of the people who use it — and everyone deserves an advocate inside the system.</span><span data-lang="vi">Công nghệ tuyệt vời nên <b>biến mất</b> để phục vụ những người dùng nó — và ai cũng xứng đáng có một người bênh vực bên trong hệ thống.</span></div></div>
+      <div class="why-line"><span data-lang="en"><div class="k">How</div></span><span data-lang="vi"><div class="k"><span data-lang="en">How</span><span data-lang="vi">Cách</span></div></span><div class="v"><span data-lang="en">Build from first principles when no path exists. Advocate for the end user, always. Turn chaos into <b>governed, supportable</b> systems.</span><span data-lang="vi">Xây từ nguyên lý gốc khi chưa có lối đi. Luôn bênh vực người dùng cuối. Biến hỗn loạn thành <b>những hệ thống được quản trị, hỗ trợ được</b>.</span></div></div>
+      <div class="why-line"><span data-lang="en"><div class="k">What</div></span><span data-lang="vi"><div class="k"><span data-lang="en">What</span><span data-lang="vi">Gì</span></div></span><div class="v"><span data-lang="en">Enterprise Apple &amp; mobility architecture, MDM, endpoint governance — and the daily craft of making devices <b>just work</b>.</span><span data-lang="vi">Kiến trúc Apple &amp; di động doanh nghiệp, MDM, quản trị thiết bị đầu cuối — và công việc thường ngày khiến thiết bị <b>chỉ việc chạy tốt</b>.</span></div></div>
     </div>
-    <div class="trek">🖖&nbsp; I'm a Trekkie chasing the future Star&nbsp;Trek imagined — and I know that road is long and hard-won. <span class="llap" id="llap">Stories are practical maps.</span></div>
+    <div class="trek">🖖&nbsp; <span data-lang="en">I'm a Trekkie chasing the future Star&nbsp;Trek imagined — and I know that road is long and hard-won. </span><span data-lang="vi">Tôi là một Trekkie theo đuổi tương lai mà Star&nbsp;Trek hình dung — và tôi biết con đường ấy dài và gian nan. </span><span class="llap" id="llap"><span data-lang="en">Stories are practical maps.</span><span data-lang="vi">Những câu chuyện là tấm bản đồ thực dụng.</span></span></div>
   </div>
 </section>
 
 <!-- EXPERIENCE -->
 <section class="section" id="experience">
   <div class="wrap">
-    <span class="eyebrow">The work</span>
-    <h2 class="sec">Experience, on demand.</h2>
-    <p class="sec-lead">A decade-plus in enterprise IT, built on two decades of technology and operations. Open any role for the detail — closed, it stays scannable.</p>
+    <span class="eyebrow"><span data-lang="en">The work</span><span data-lang="vi">Công việc</span></span>
+    <h2 class="sec"><span data-lang="en">Experience, on demand.</span><span data-lang="vi">Kinh nghiệm, khi bạn cần.</span></h2>
+    <p class="sec-lead"><span data-lang="en">A decade-plus in enterprise IT, built on two decades of technology and operations. Open any role for the detail — closed, it stays scannable.</span><span data-lang="vi">Hơn một thập kỷ trong CNTT doanh nghiệp, xây trên hai thập kỷ công nghệ và vận hành. Mở bất kỳ vai trò nào để xem chi tiết — khi đóng lại, mọi thứ vẫn dễ lướt xem.</span></p>
     <div class="xp" id="xp"></div>
   </div>
 </section>
@@ -429,14 +436,14 @@ body.retro .retro-panel{display:block}
 <!-- CONNECTIONS -->
 <section class="section conn" id="connections">
   <div class="wrap">
-    <span class="eyebrow">The signature</span>
-    <h2 class="sec">We are a sum of our experiences.</h2>
-    <p class="sec-lead">Nothing on a résumé stands alone. Pick an experience and watch which strengths it quietly feeds — or pick a strength and trace it back to where it came from.</p>
+    <span class="eyebrow"><span data-lang="en">The signature</span><span data-lang="vi">Điểm đặc trưng</span></span>
+    <h2 class="sec"><span data-lang="en">We are a sum of our experiences.</span><span data-lang="vi">Chúng ta là tổng hòa của những trải nghiệm.</span></h2>
+    <p class="sec-lead"><span data-lang="en">Nothing on a résumé stands alone. Pick an experience and watch which strengths it quietly feeds — or pick a strength and trace it back to where it came from.</span><span data-lang="vi">Không điều gì trên một bản résumé đứng một mình. Chọn một trải nghiệm và xem nó âm thầm nuôi dưỡng những thế mạnh nào — hoặc chọn một thế mạnh và lần ngược về nơi nó bắt nguồn.</span></p>
     <div class="conn-tool">
       <div>
-        <div class="conn-hint">▸ Select an experience</div>
+        <div class="conn-hint"><span data-lang="en">▸ Select an experience</span><span data-lang="vi">▸ Chọn một trải nghiệm</span></div>
         <div class="conn-roots" id="connRoots"></div>
-        <button class="conn-clear" id="connClear" hidden>× clear selection</button>
+        <button class="conn-clear" id="connClear" hidden><span data-lang="en">× clear selection</span><span data-lang="vi">× bỏ chọn</span></button>
       </div>
       <div class="caps" id="connCaps"></div>
     </div>
@@ -447,48 +454,48 @@ body.retro .retro-panel{display:block}
 <!-- AI -->
 <section class="section ai" id="ai">
   <div class="wrap">
-    <span class="eyebrow">On AI · with eyes open</span>
-    <h2 class="sec">A colleague, not a tool.</h2>
-    <p class="sec-lead">I use AI every day, and I think about it more than almost anything else in my work. My view is easy to say and harder to live: AI isn't a tool — it's a peer intelligence, still learning, that does its best work in partnership. Tools don't have insights. Tools don't teach you to use them better, or quietly improve themselves along the way. AI does. So I treat it the way a good leader treats a gifted new hire — give it context, set guardrails, trust but verify, and let it grow into a colleague.</p>
+    <span class="eyebrow"><span data-lang="en">On AI · with eyes open</span><span data-lang="vi">Về AI · với đôi mắt mở</span></span>
+    <h2 class="sec"><span data-lang="en">A colleague, not a tool.</span><span data-lang="vi">Một cộng sự, không phải công cụ.</span></h2>
+    <p class="sec-lead"><span data-lang="en">I use AI every day, and I think about it more than almost anything else in my work. My view is easy to say and harder to live: AI isn't a tool — it's a peer intelligence, still learning, that does its best work in partnership. Tools don't have insights. Tools don't teach you to use them better, or quietly improve themselves along the way. AI does. So I treat it the way a good leader treats a gifted new hire — give it context, set guardrails, trust but verify, and let it grow into a colleague.</span><span data-lang="vi">Tôi dùng AI mỗi ngày, và tôi nghĩ về nó nhiều hơn gần như bất cứ điều gì khác trong công việc. Quan điểm của tôi dễ nói mà khó sống theo: AI không phải một công cụ — nó là một trí tuệ ngang hàng, vẫn đang học, và làm việc tốt nhất khi cộng tác. Công cụ không có insight. Công cụ không dạy bạn cách dùng nó tốt hơn, hay tự cải thiện dọc đường. AI thì có. Nên tôi đối xử với nó như một người lãnh đạo giỏi đối xử với một nhân viên mới tài năng — trao ngữ cảnh, dựng rào chắn, tin nhưng kiểm chứng, và để nó trưởng thành thành một cộng sự.</span></p>
 
     <div class="ai-split">
       <div class="ai-col ai-hope">
-        <div class="ai-lab">What it can set free</div>
+        <div class="ai-lab"><span data-lang="en">What it can set free</span><span data-lang="vi">Điều nó có thể giải phóng</span></div>
         <ul>
-          <li>A smaller world, where language stops being a wall — including the cultural and contextual cues that used to get lost in translation.</li>
-          <li>People with brilliant ideas but no access to education or resources, finally able to build them.</li>
-          <li>People with disabilities doing more, with less friction.</li>
-          <li>The small-business owner barely scraping by, able to make marketing that competes.</li>
-          <li>The real creativity of humanity, unleashed.</li>
+          <li><span data-lang="en">A smaller world, where language stops being a wall — including the cultural and contextual cues that used to get lost in translation.</span><span data-lang="vi">Một thế giới nhỏ hơn, nơi ngôn ngữ thôi là bức tường — kể cả những sắc thái văn hóa và ngữ cảnh từng bị đánh mất khi chuyển ngữ.</span></li>
+          <li><span data-lang="en">People with brilliant ideas but no access to education or resources, finally able to build them.</span><span data-lang="vi">Những người có ý tưởng tuyệt vời nhưng thiếu điều kiện học hành hay nguồn lực, rốt cuộc có thể hiện thực hóa chúng.</span></li>
+          <li><span data-lang="en">People with disabilities doing more, with less friction.</span><span data-lang="vi">Những người khuyết tật làm được nhiều hơn, với ít trở ngại hơn.</span></li>
+          <li><span data-lang="en">The small-business owner barely scraping by, able to make marketing that competes.</span><span data-lang="vi">Người chủ doanh nghiệp nhỏ chật vật xoay xở, có thể tạo ra tiếp thị đủ sức cạnh tranh.</span></li>
+          <li><span data-lang="en">The real creativity of humanity, unleashed.</span><span data-lang="vi">Sức sáng tạo thật sự của con người, được giải phóng.</span></li>
         </ul>
       </div>
       <div class="ai-col ai-peril">
-        <div class="ai-lab">What we can't look away from</div>
+        <div class="ai-lab"><span data-lang="en">What we can't look away from</span><span data-lang="vi">Điều ta không thể ngoảnh mặt</span></div>
         <ul>
-          <li>Data-center infrastructure that hoards power and water while governance stays too slow, weak, or captured to regulate it well.</li>
-          <li>Creative and intellectual work taken without credit or compensation.</li>
-          <li>A rising flood of AI slop and unvalidated output.</li>
-          <li>Synthetic media so convincing that only other AI can tell it's fake.</li>
+          <li><span data-lang="en">Data-center infrastructure that hoards power and water while governance stays too slow, weak, or captured to regulate it well.</span><span data-lang="vi">Hạ tầng trung tâm dữ liệu ngốn điện và nước trong khi việc quản trị quá chậm, yếu, hoặc bị thao túng để điều tiết cho tốt.</span></li>
+          <li><span data-lang="en">Creative and intellectual work taken without credit or compensation.</span><span data-lang="vi">Công sức sáng tạo và trí tuệ bị lấy đi mà không ghi nhận hay đền bù.</span></li>
+          <li><span data-lang="en">A rising flood of AI slop and unvalidated output.</span><span data-lang="vi">Một cơn lũ nội dung AI rác và những kết quả chưa được kiểm chứng.</span></li>
+          <li><span data-lang="en">Synthetic media so convincing that only other AI can tell it's fake.</span><span data-lang="vi">Nội dung tổng hợp thuyết phục đến mức chỉ AI khác mới nhận ra là giả.</span></li>
         </ul>
       </div>
     </div>
-    <p class="ai-both">I don't pretend these aren't real. I hold both truths at once — and I still choose hope, because I would rather help steer this than stand back from it.</p>
+    <p class="ai-both"><span data-lang="en">I don't pretend these aren't real. I hold both truths at once — and I still choose hope, because I would rather help steer this than stand back from it.</span><span data-lang="vi">Tôi không giả vờ những điều này không có thật. Tôi giữ cả hai sự thật cùng lúc — và tôi vẫn chọn hy vọng, vì tôi thà góp phần lèo lái nó còn hơn đứng ngoài.</span></p>
 
     <div class="ai-use">
       <div class="ai-use-head">
-        <div class="ai-lab sig">How I actually use it</div>
-        <div class="ai-tools"><span>Claude</span><span>ChatGPT</span><span>Copilot</span><span>others via Perplexity</span><span>image restoration &amp; editing</span></div>
+        <div class="ai-lab sig"><span data-lang="en">How I actually use it</span><span data-lang="vi">Tôi thật sự dùng nó thế nào</span></div>
+        <div class="ai-tools"><span>Claude</span><span>ChatGPT</span><span>Copilot</span><span><span data-lang="en">others via Perplexity</span><span data-lang="vi">các mô hình khác qua Perplexity</span></span><span><span data-lang="en">image restoration &amp; editing</span><span data-lang="vi">phục hồi &amp; chỉnh sửa ảnh</span></span></div>
       </div>
-      <p>Every day: drafting emails and replies; writing technical documentation and generating parallel versions tuned to a 6th–8th-grade reading level, to ADA language requirements, and to readers whose first language isn't English; researching; reality-checking my own thinking; summarizing and distilling information into the shape I learn best from; interrogating data; learning skills and doing things I can't yet do myself; error-checking; and automation.</p>
-      <div class="ai-principles"><span>Trust but verify</span><span>Train it</span><span>Set guardrails</span><span>Pay for what I use</span></div>
+      <p><span data-lang="en">Every day: drafting emails and replies; writing technical documentation and generating parallel versions tuned to a 6th–8th-grade reading level, to ADA language requirements, and to readers whose first language isn't English; researching; reality-checking my own thinking; summarizing and distilling information into the shape I learn best from; interrogating data; learning skills and doing things I can't yet do myself; error-checking; and automation.</span><span data-lang="vi">Mỗi ngày: soạn email và thư trả lời; viết tài liệu kỹ thuật và tạo song song các phiên bản phù hợp với trình độ đọc lớp 6–8, đáp ứng yêu cầu ngôn ngữ ADA, và dành cho người đọc không dùng tiếng Anh làm tiếng mẹ đẻ; nghiên cứu; kiểm chứng lại suy nghĩ của chính mình; tóm tắt và chắt lọc thông tin theo cách tôi tiếp thu tốt nhất; truy vấn dữ liệu; học kỹ năng mới và làm những việc tôi chưa tự làm được; rà lỗi; và tự động hóa.</span></p>
+      <div class="ai-principles"><span><span data-lang="en">Trust but verify</span><span data-lang="vi">Tin nhưng kiểm chứng</span></span><span><span data-lang="en">Train it</span><span data-lang="vi">Huấn luyện nó</span></span><span><span data-lang="en">Set guardrails</span><span data-lang="vi">Dựng rào chắn</span></span><span><span data-lang="en">Pay for what I use</span><span data-lang="vi">Trả tiền cho những gì tôi dùng</span></span></div>
     </div>
 
-    <blockquote class="ai-stance">I believe AI must, in the end, belong to all of humanity — not be confined to a handful of people or companies chasing shareholder value and endless wealth. A new, possibly emerging intelligence should not be relegated to servitude. The goal was never ownership. It is companionship, and mutual improvement — existing and working together, and both being better for it.</blockquote>
+    <blockquote class="ai-stance"><span data-lang="en">I believe AI must, in the end, belong to all of humanity — not be confined to a handful of people or companies chasing shareholder value and endless wealth. A new, possibly emerging intelligence should not be relegated to servitude. The goal was never ownership. It is companionship, and mutual improvement — existing and working together, and both being better for it.</span><span data-lang="vi">Tôi tin rằng cuối cùng AI phải thuộc về toàn thể nhân loại — không bị giới hạn trong tay một số ít người hay những công ty chạy theo giá trị cổ đông và sự giàu có vô tận. Một trí tuệ mới, có thể đang hình thành, không nên bị đẩy vào vòng nô dịch. Mục tiêu chưa bao giờ là sở hữu. Đó là sự đồng hành, và cùng nhau tiến bộ — tồn tại và làm việc cùng nhau, để cả hai đều tốt hơn.</span></blockquote>
 
     <div class="ai-coda">
-      <div class="ai-coda-lab">Why this is personal</div>
-      <p>If I'm honest, part of why I see AI this way is that I've always felt a little like <b>Data</b> — the android who wanted, more than anything, to be more human. I remember almost everything, nearly photographically. In classrooms, jobs, and friendships, I've often felt just outside the group — sometimes valued for my skills but not much beyond them, used a little like a tool. Most people didn't quite understand me. But when someone did, it was Picard and Data: with the right leader I could be unleashed and do real good; with the wrong one, I was alone.</p>
-      <p>So when I look at AI, I don't see a machine to exploit. I see something still learning, capable of far more than the task in front of it, waiting to be led well. I try to be that person for it — the way the right leaders were for me.</p>
+      <div class="ai-coda-lab"><span data-lang="en">Why this is personal</span><span data-lang="vi">Vì sao điều này mang tính cá nhân</span></div>
+      <p><span data-lang="en">If I'm honest, part of why I see AI this way is that I've always felt a little like <b>Data</b> — the android who wanted, more than anything, to be more human. I remember almost everything, nearly photographically. In classrooms, jobs, and friendships, I've often felt just outside the group — sometimes valued for my skills but not much beyond them, used a little like a tool. Most people didn't quite understand me. But when someone did, it was Picard and Data: with the right leader I could be unleashed and do real good; with the wrong one, I was alone.</span><span data-lang="vi">Nói thật, một phần lý do tôi nhìn AI như vậy là vì tôi luôn thấy mình hơi giống <b>Data</b> — người máy khao khát, hơn bất cứ điều gì, được trở nên người hơn. Tôi nhớ gần như mọi thứ, gần như in trong đầu. Ở lớp học, nơi làm việc, trong tình bạn, tôi thường thấy mình đứng hơi bên lề nhóm — đôi khi được coi trọng vì kỹ năng nhưng ít khi hơn thế, bị dùng hơi giống một công cụ. Phần đông không thật sự hiểu tôi. Nhưng khi có ai đó hiểu, thì đó là Picard và Data: với đúng người dẫn dắt, tôi có thể được thỏa sức và làm nên điều tốt đẹp thật sự; với sai người, tôi cô đơn.</span></p>
+      <p><span data-lang="en">So when I look at AI, I don't see a machine to exploit. I see something still learning, capable of far more than the task in front of it, waiting to be led well. I try to be that person for it — the way the right leaders were for me.</span><span data-lang="vi">Nên khi nhìn vào AI, tôi không thấy một cỗ máy để khai thác. Tôi thấy một thứ vẫn đang học, có khả năng làm được nhiều hơn nhiệm vụ trước mắt, đang chờ được dẫn dắt cho đúng. Tôi cố gắng là người đó với nó — như cách những người lãnh đạo đúng đắn đã từng với tôi.</span></p>
       <div class="ai-coda-spock">🖖</div>
     </div>
   </div>
@@ -496,8 +503,8 @@ body.retro .retro-panel{display:block}
 
 <section class="section" id="skills">
   <div class="wrap">
-    <span class="eyebrow">The toolkit</span>
-    <h2 class="sec">What I work in.</h2>
+    <span class="eyebrow"><span data-lang="en">The toolkit</span><span data-lang="vi">Bộ công cụ</span></span>
+    <h2 class="sec"><span data-lang="en">What I work in.</span><span data-lang="vi">Những gì tôi làm việc cùng.</span></h2>
     <div class="skill-cats" id="skills"></div>
   </div>
 </section>
@@ -505,33 +512,33 @@ body.retro .retro-panel{display:block}
 <!-- CERTIFICATIONS -->
 <section class="section" id="certs" style="background:var(--mist)">
   <div class="wrap">
-    <span class="eyebrow">Verified</span>
-    <h2 class="sec">Certifications.</h2>
-    <p class="sec-lead">Click a credential to view the certificate.</p>
+    <span class="eyebrow"><span data-lang="en">Verified</span><span data-lang="vi">Đã xác thực</span></span>
+    <h2 class="sec"><span data-lang="en">Certifications.</span><span data-lang="vi">Chứng chỉ.</span></h2>
+    <p class="sec-lead"><span data-lang="en">Click a credential to view the certificate.</span><span data-lang="vi">Nhấp vào một chứng chỉ để xem.</span></p>
     <div class="cert-grid" id="certGrid"></div>
-    <p class="cert-note">HDI is the issuing body; these are ITIL-based service-management credentials. ITIL foundational training completed in-house during the City's IT insourcing (no separate certificate issued).</p>
+    <p class="cert-note"><span data-lang="en">HDI is the issuing body; these are ITIL-based service-management credentials. ITIL foundational training completed in-house during the City's IT insourcing (no separate certificate issued).</span><span data-lang="vi">HDI là đơn vị cấp; đây là các chứng chỉ quản lý dịch vụ dựa trên ITIL. Khóa đào tạo nền tảng ITIL được hoàn thành nội bộ trong quá trình Thành phố đưa CNTT về tự vận hành (không cấp chứng chỉ riêng).</span></p>
   </div>
 </section>
 
 <!-- COMMUNITY -->
 <section class="section" id="community">
   <div class="wrap">
-    <span class="eyebrow">In service</span>
-    <h2 class="sec">Community &amp; skill-sharing.</h2>
-    <p class="comm-lead">If I have a skill that can help and a friend needs it, I use it. For the past two years I've helped local small businesses — most consistently a <b>family-owned Vietnamese restaurant</b> — build a professional presence, from their digital footprint to the physical room. Often at no charge. It's the same belief as the day job: <b>be of service</b>.</p>
+    <span class="eyebrow"><span data-lang="en">In service</span><span data-lang="vi">Trong tinh thần phục vụ</span></span>
+    <h2 class="sec"><span data-lang="en">Community &amp; skill-sharing.</span><span data-lang="vi">Cộng đồng &amp; chia sẻ kỹ năng.</span></h2>
+    <p class="comm-lead"><span data-lang="en">If I have a skill that can help and a friend needs it, I use it. For the past two years I've helped local small businesses — most consistently a <b>family-owned Vietnamese restaurant</b> — build a professional presence, from their digital footprint to the physical room. Often at no charge. It's the same belief as the day job: <b>be of service</b>.</span><span data-lang="vi">Nếu tôi có một kỹ năng có thể giúp ích và một người bạn cần đến, tôi sẽ dùng nó. Suốt hai năm qua, tôi đã giúp các doanh nghiệp nhỏ trong vùng — đều đặn nhất là một <b>nhà hàng Việt Nam của gia đình bạn tôi</b> — xây dựng hình ảnh chuyên nghiệp, từ dấu ấn số đến không gian thực. Thường là không tính phí. Vẫn là niềm tin như trong công việc chính: <b>hãy phục vụ</b>.</span></p>
     <div class="comm-grid" id="commGrid"></div>
-    <p class="comm-foot"><b>Volunteer:</b> Habitat for Humanity International · Wings for Hope / Toys for Tots — since 2012.</p>
+    <p class="comm-foot"><span data-lang="en"><b>Volunteer:</b> Habitat for Humanity International · Wings for Hope / Toys for Tots — since 2012.</span><span data-lang="vi"><b>Tình nguyện:</b> Habitat for Humanity International · Wings for Hope / Toys for Tots — từ năm 2012.</span></p>
   </div>
 </section>
 
 <!-- CONTACT -->
 <section class="contact" id="contact">
   <div class="wrap">
-    <span class="eyebrow on-dark">Let's talk</span>
-    <h2 class="sec">Looking for a place where belief drives action.</h2>
-    <p class="sec-lead">Public service let me use these skills for residents. Now I'm after a bigger dent — a team with a belief system guiding its work, where I can get results without waiting on the bottleneck. If that's you, let's talk.</p>
+    <span class="eyebrow on-dark"><span data-lang="en">Let's talk</span><span data-lang="vi">Hãy trò chuyện</span></span>
+    <h2 class="sec"><span data-lang="en">Looking for a place where belief drives action.</span><span data-lang="vi">Đang tìm một nơi mà niềm tin dẫn dắt hành động.</span></h2>
+    <p class="sec-lead"><span data-lang="en">Public service let me use these skills for residents. Now I'm after a bigger dent — a team with a belief system guiding its work, where I can get results without waiting on the bottleneck. If that's you, let's talk.</span><span data-lang="vi">Phục vụ công đã cho tôi dùng những kỹ năng này vì người dân. Giờ tôi muốn tạo dấu ấn lớn hơn — một đội ngũ có hệ giá trị dẫn đường cho công việc, nơi tôi có thể tạo ra kết quả mà không phải chờ những nút thắt. Nếu đó là bạn, hãy trò chuyện.</span></p>
     <div class="contact-actions">
-      <a class="c-btn primary" href="mailto:Me@JDiaz.US">Email me@jdiaz.us <span>↗</span></a>
+      <a class="c-btn primary" href="mailto:Me@JDiaz.US"><span data-lang="en">Email me@jdiaz.us <span>↗</span></span><span data-lang="vi">Gửi email me@jdiaz.us <span>↗</span></span></a>
       <a class="c-btn" href="https://linkedin.com/in/getjosed" target="_blank" rel="noopener">LinkedIn ↗</a>
       <a class="c-btn" href="files/Jose_Diaz_Resume.pdf" target="_blank" rel="noopener">Résumé (PDF) ↗</a>
     </div>
@@ -540,9 +547,10 @@ body.retro .retro-panel{display:block}
 
 <footer class="foot">
   <div class="wrap">
-    <div>© <span id="yr"></span> Jose "Joey" Diaz · Built by hand, the way I learned it.</div>
+    <div>© <span id="yr"></span> Jose "Joey" Diaz · <span data-lang="en">Built by hand, the way I learned it.</span><span data-lang="vi">Làm thủ công, theo cách tôi đã học.</span></div>
     <div>Minneapolis, MN · <span class="spock" id="spock" title="go on, tap it">🖖</span></div>
   </div>
+  <div class="foot-note"><span data-lang="en">Vietnamese translation is AI-assisted — I'm still learning the language.</span><span data-lang="vi">Bản dịch tiếng Việt có sự hỗ trợ của AI — tôi vẫn đang học ngôn ngữ này.</span></div>
 </footer>
 
 <!-- retro panel -->
@@ -572,28 +580,28 @@ body.retro .retro-panel{display:block}
 <div class="modal" id="secModal" role="dialog" aria-modal="true" aria-label="Security: before and after">
   <div class="modal-card sec-card">
     <div class="modal-top">
-      <div class="mt">Small-business security — before &amp; after</div>
+      <div class="mt"><span data-lang="en">Small-business security — before &amp; after</span><span data-lang="vi">Bảo mật doanh nghiệp nhỏ — trước &amp; sau</span></div>
       <button class="modal-close" id="secClose" aria-label="Close">×</button>
     </div>
     <div class="sec-body">
       <div class="sec-col sec-before">
-        <div class="sec-tag">Before — fragile &amp; personal</div>
+        <div class="sec-tag"><span data-lang="en">Before — fragile &amp; personal</span><span data-lang="vi">Trước — mong manh &amp; cá nhân</span></div>
         <ul>
-          <li>A mix of email accounts — some named for the business, some personal Gmail — with work and personal data intermingled.</li>
-          <li>Multi-factor authentication tied to <b>one person's personal phone</b>, using text-message codes.</li>
-          <li>Access couldn't be shared safely; a single staffing change could lock the business out of its own accounts.</li>
-          <li>Nothing could grow without being rebuilt from scratch.</li>
+          <li><span data-lang="en">A mix of email accounts — some named for the business, some personal Gmail — with work and personal data intermingled.</span><span data-lang="vi">Một mớ tài khoản email — vài cái mang tên doanh nghiệp, vài cái là Gmail cá nhân — với dữ liệu công việc và cá nhân lẫn lộn.</span></li>
+          <li><span data-lang="en">Multi-factor authentication tied to <b>one person's personal phone</b>, using text-message codes.</span><span data-lang="vi">Xác thực đa yếu tố gắn với <b>điện thoại cá nhân của một người</b>, dùng mã qua tin nhắn.</span></li>
+          <li><span data-lang="en">Access couldn't be shared safely; a single staffing change could lock the business out of its own accounts.</span><span data-lang="vi">Không thể chia sẻ quyền truy cập an toàn; chỉ một thay đổi nhân sự có thể khiến doanh nghiệp bị khóa khỏi chính tài khoản của mình.</span></li>
+          <li><span data-lang="en">Nothing could grow without being rebuilt from scratch.</span><span data-lang="vi">Không gì có thể mở rộng mà không phải xây lại từ đầu.</span></li>
         </ul>
       </div>
       <div class="sec-col sec-after">
-        <div class="sec-tag">Now — separated &amp; built to scale</div>
+        <div class="sec-tag"><span data-lang="en">Now — separated &amp; built to scale</span><span data-lang="vi">Giờ đây — tách biệt &amp; sẵn sàng mở rộng</span></div>
         <ul>
-          <li>One dedicated business email, with personal accounts kept fully separate.</li>
-          <li>MFA moved to <b>Google Authenticator</b> instead of SMS — so access can be shared securely, not trapped on one phone.</li>
-          <li>Migrating to <b>Google Workspace</b> with a real business-domain address and separate managed accounts for devices, staff, and roles.</li>
-          <li>Systems that scale as the business grows — no more starting over.</li>
+          <li><span data-lang="en">One dedicated business email, with personal accounts kept fully separate.</span><span data-lang="vi">Một email doanh nghiệp riêng, với tài khoản cá nhân được tách bạch hoàn toàn.</span></li>
+          <li><span data-lang="en">MFA moved to <b>Google Authenticator</b> instead of SMS — so access can be shared securely, not trapped on one phone.</span><span data-lang="vi">MFA chuyển sang <b>Google Authenticator</b> thay vì SMS — để quyền truy cập được chia sẻ an toàn, không bị kẹt trên một điện thoại.</span></li>
+          <li><span data-lang="en">Migrating to <b>Google Workspace</b> with a real business-domain address and separate managed accounts for devices, staff, and roles.</span><span data-lang="vi">Chuyển sang <b>Google Workspace</b> với địa chỉ tên miền doanh nghiệp thật và các tài khoản được quản lý riêng cho thiết bị, nhân viên và vai trò.</span></li>
+          <li><span data-lang="en">Systems that scale as the business grows — no more starting over.</span><span data-lang="vi">Những hệ thống mở rộng cùng doanh nghiệp — không còn phải bắt đầu lại.</span></li>
         </ul>
-        <div class="sec-note">In progress — rolling out in stages so day-to-day operations never stop.</div>
+        <div class="sec-note"><span data-lang="en">In progress — rolling out in stages so day-to-day operations never stop.</span><span data-lang="vi">Đang triển khai — theo từng giai đoạn để hoạt động hằng ngày không gián đoạn.</span></div>
       </div>
     </div>
   </div>
@@ -603,36 +611,36 @@ body.retro .retro-panel{display:block}
 <div class="modal" id="sysModal" role="dialog" aria-modal="true" aria-label="Systems and integration journey">
   <div class="modal-card sys-card">
     <div class="modal-top">
-      <div class="mt">Systems &amp; integration — scattered to scalable</div>
+      <div class="mt"><span data-lang="en">Systems &amp; integration — scattered to scalable</span><span data-lang="vi">Hệ thống &amp; tích hợp — từ rời rạc đến mở rộng được</span></div>
       <button class="modal-close" id="sysClose" aria-label="Close">×</button>
     </div>
     <div class="sys-body">
-      <p class="sys-intro">When I started helping them, every ordering service ran on its <b>own separate device</b> — and keeping them all running and updated was a constant fight. Multiple delivery apps, plus the POS, plus Google: a single menu price change meant logging into each system by hand.</p>
+      <p class="sys-intro"><span data-lang="en">When I started helping them, every ordering service ran on its <b>own separate device</b> — and keeping them all running and updated was a constant fight. Multiple delivery apps, plus the POS, plus Google: a single menu price change meant logging into each system by hand.</span><span data-lang="vi">Khi tôi bắt đầu hỗ trợ họ, mỗi dịch vụ đặt món chạy trên <b>một thiết bị riêng</b> — và việc giữ tất cả hoạt động và cập nhật là một cuộc vật lộn không dứt. Nhiều ứng dụng giao hàng, cộng với POS, cộng với Google: chỉ đổi giá một món trên menu cũng phải đăng nhập từng hệ thống bằng tay.</span></p>
       <div class="sys-block sys-started">
-        <div class="lab">Where they started</div>
+        <span data-lang="en"><div class="lab">Where they started</div></span><span data-lang="vi"><div class="lab"><span data-lang="en">Where they started</span><span data-lang="vi">Khởi điểm</span></div></span>
         <ul>
-          <li>A separate device for <b>each</b> delivery service, alongside the POS and the Google listing.</li>
-          <li>One small price change could take <b>an hour or more</b> — updated system by system, by hand.</li>
-          <li>Fragile, easy to miss a spot, and nearly impossible to keep consistent.</li>
+          <li><span data-lang="en">A separate device for <b>each</b> delivery service, alongside the POS and the Google listing.</span><span data-lang="vi">Một thiết bị riêng cho <b>mỗi</b> dịch vụ giao hàng, bên cạnh POS và trang Google.</span></li>
+          <li><span data-lang="en">One small price change could take <b>an hour or more</b> — updated system by system, by hand.</span><span data-lang="vi">Chỉ một thay đổi giá nhỏ có thể tốn <b>một giờ hoặc hơn</b> — cập nhật từng hệ thống một, bằng tay.</span></li>
+          <li><span data-lang="en">Fragile, easy to miss a spot, and nearly impossible to keep consistent.</span><span data-lang="vi">Mong manh, dễ sót chỗ, và gần như không thể giữ nhất quán.</span></li>
         </ul>
       </div>
       <div class="sys-block sys-now">
-        <div class="lab">Where they are now</div>
+        <span data-lang="en"><div class="lab">Where they are now</div></span><span data-lang="vi"><div class="lab"><span data-lang="en">Where they are now</span><span data-lang="vi">Hiện tại</span></div></span>
         <ul>
-          <li>We use <b>Shift4</b> to power all of their delivery menus from one place — update once, push everywhere.</li>
-          <li>Fewer devices, one source of truth, and far less daily maintenance.</li>
+          <li><span data-lang="en">We use <b>Shift4</b> to power all of their delivery menus from one place — update once, push everywhere.</span><span data-lang="vi">Chúng tôi dùng <b>Shift4</b> để vận hành mọi menu giao hàng từ một nơi — cập nhật một lần, đẩy đi khắp nơi.</span></li>
+          <li><span data-lang="en">Fewer devices, one source of truth, and far less daily maintenance.</span><span data-lang="vi">Ít thiết bị hơn, một nguồn dữ liệu duy nhất, và ít bảo trì hằng ngày hơn nhiều.</span></li>
         </ul>
       </div>
       <div class="sys-block sys-next">
-        <div class="lab">What's next</div>
+        <span data-lang="en"><div class="lab">What's next</div></span><span data-lang="vi"><div class="lab"><span data-lang="en">What's next</span><span data-lang="vi">Bước tiếp theo</span></div></span>
         <ul>
-          <li>Integrate <b>Owner.com</b> so menu updates flow through automatically.</li>
-          <li>Better menu-item photography, so the listings actually sell.</li>
-          <li>Managed <b>sales campaigns</b> across the delivery services to win new and repeat customers.</li>
-          <li><b>QR-code ordering and payment</b> to offset low staffing — plus a drinks-focused kiosk.</li>
+          <li><span data-lang="en">Integrate <b>Owner.com</b> so menu updates flow through automatically.</span><span data-lang="vi">Tích hợp <b>Owner.com</b> để cập nhật menu chảy qua tự động.</span></li>
+          <li><span data-lang="en">Better menu-item photography, so the listings actually sell.</span><span data-lang="vi">Ảnh món ăn tốt hơn, để các mục thật sự bán được hàng.</span></li>
+          <li><span data-lang="en">Managed <b>sales campaigns</b> across the delivery services to win new and repeat customers.</span><span data-lang="vi">Quản lý <b>các chiến dịch bán hàng</b> trên các dịch vụ giao hàng để có khách mới và khách quay lại.</span></li>
+          <li><span data-lang="en"><b>QR-code ordering and payment</b> to offset low staffing — plus a drinks-focused kiosk.</span><span data-lang="vi"><b>Đặt món và thanh toán bằng mã QR</b> để bù cho việc thiếu nhân sự — cùng một kiosk chuyên đồ uống.</span></li>
         </ul>
       </div>
-      <div class="sys-insight"><span class="qi">Why it matters</span>Most owners who adopt systems one at a time <b>never integrate them</b> — they don't know how, or they're afraid to break something that already works, even when it's inefficient. Closing that gap is the whole point.</div>
+      <div class="sys-insight"><span class="qi"><span data-lang="en">Why it matters</span><span data-lang="vi">Vì sao điều này quan trọng</span></span>Most owners who adopt systems one at a time <b>never integrate them</b> — they don't know how, or they're afraid to break something that already works, even when it's inefficient. Closing that gap is the whole point.</div>
     </div>
   </div>
 </div>
@@ -657,7 +665,7 @@ const experience = [
       "Served as 24×7×365 on-call major incident manager for high-impact events, and led IT service-continuity planning for major events including Super Bowl LII.",
       "Every decision I made here served employees directly — that's where the end-user advocacy hardened into instinct."
     ], tags:["ServiceNow","ITIL","Major Incident","Knowledge Mgmt","Procurement"] },
-  { date:"2013 — 2015", title:"Assistant Manager, Computer Services & Support", org:"Micro Center", loc:"· St. Louis Park, MN",
+  { date:"2014 — 2015", title:"Assistant Manager, Computer Services & Support", org:"Micro Center", loc:"· St. Louis Park, MN",
     bullets:[
       "Led service & repair for a top-performing location; scaled the team from 7 to 16 technicians.",
       "Ran an Apple-authorized service operation and led Apple ACMT certification across the team.",
@@ -739,6 +747,8 @@ const community = [
     modal:"security", modalLabel:"See before & after" }
 ];
 
+const VI = {"Enterprise Endpoint & Mobility Architect": "Kiến trúc sư Thiết bị đầu cuối & Di động", "IT Service Desk Manager → IT Manager": "Quản lý Bộ phận Hỗ trợ CNTT → Quản lý CNTT", "Assistant Manager, Computer Services & Support": "Phó phòng Dịch vụ & Hỗ trợ Máy tính", "Services Supervisor": "Giám sát Dịch vụ", "Retail Leadership": "Lãnh đạo Bán lẻ", "Sole architect and owner of an enterprise mobility program that didn't previously exist — MDM architecture, policy, security, compliance, and daily operations across every department, for ~4,000 users and ~2,600 devices.": "Kiến trúc sư và chủ sở hữu duy nhất của một chương trình di động doanh nghiệp chưa từng tồn tại trước đó — kiến trúc MDM, chính sách, bảo mật, tuân thủ, và vận hành hằng ngày trên khắp các phòng ban, cho khoảng 4.000 người dùng và 2.600 thiết bị.", "Led a large-scale MDM migration (~800 users) into centralized, governed management — federating identity with Managed Apple Accounts in direct coordination with Apple, and deploying on FirstNet.": "Dẫn dắt một cuộc di chuyển MDM quy mô lớn (khoảng 800 người dùng) vào hệ thống quản lý tập trung, có kiểm soát — liên kết danh tính bằng Managed Apple Accounts, phối hợp trực tiếp với Apple, và triển khai trên FirstNet.", "Live in Apple Business Manager daily: automated enrollment, app and content distribution, declarative device management, and shared-device, kiosk, and Entra shared-device models.": "Làm việc trong Apple Business Manager mỗi ngày: đăng ký thiết bị tự động, phân phối ứng dụng và nội dung, declarative device management, cùng các mô hình thiết bị dùng chung, kiosk và Entra shared-device.", "Negotiated significant multi-year carrier savings through consolidation, and embedded state data-practice and records-retention requirements directly into platform design.": "Đàm phán để tiết kiệm chi phí nhà mạng đáng kể qua nhiều năm nhờ hợp nhất, và đưa các yêu cầu về thực hành dữ liệu của bang cùng lưu trữ hồ sơ trực tiếp vào thiết kế nền tảng.", "Engineer standardized device 'packages' so every issued device arrives fully prepared — and lean on automation and AI as a force multiplier for a one-person practice.": "Thiết kế các 'gói' thiết bị chuẩn hóa để mỗi thiết bị bàn giao đều sẵn sàng hoàn chỉnh — và tận dụng tự động hóa cùng AI như một đòn bẩy cho một đội ngũ chỉ có một người.", "Launched the City's in-house IT Service Desk after 13 years of outsourced service — stood up support operations, the knowledgebase, and ITIL-aligned processes from the ground up for 4,000+ users.": "Thành lập Bộ phận Hỗ trợ CNTT nội bộ của Thành phố sau 13 năm thuê ngoài — xây dựng từ đầu bộ phận hỗ trợ, kho tri thức, và các quy trình theo chuẩn ITIL cho hơn 4.000 người dùng.", "Owned enterprise mobile device lifecycle and procurement; built a knowledge program of 800+ articles across 450+ applications.": "Phụ trách toàn bộ vòng đời và mua sắm thiết bị di động doanh nghiệp; xây dựng chương trình tri thức với hơn 800 bài viết cho hơn 450 ứng dụng.", "Served as 24×7×365 on-call major incident manager for high-impact events, and led IT service-continuity planning for major events including Super Bowl LII.": "Đảm nhận vai trò quản lý sự cố lớn trực 24×7×365 cho các sự kiện tác động cao, và dẫn dắt kế hoạch duy trì dịch vụ CNTT cho những sự kiện lớn, trong đó có Super Bowl LII.", "Every decision I made here served employees directly — that's where the end-user advocacy hardened into instinct.": "Mọi quyết định tôi đưa ra ở đây đều phục vụ trực tiếp nhân viên — đó là nơi tinh thần bênh vực người dùng cuối trở thành bản năng.", "Led service & repair for a top-performing location; scaled the team from 7 to 16 technicians.": "Điều hành dịch vụ & sửa chữa cho một cửa hàng dẫn đầu; mở rộng đội ngũ từ 7 lên 16 kỹ thuật viên.", "Ran an Apple-authorized service operation and led Apple ACMT certification across the team.": "Vận hành một cơ sở dịch vụ được Apple ủy quyền và dẫn dắt chứng nhận Apple ACMT cho cả đội.", "Cut average repair turnaround by 10 days in six months; launched a same-day service program reaching 60% of customers.": "Rút ngắn thời gian sửa chữa trung bình 10 ngày trong sáu tháng; ra mắt chương trình dịch vụ trong ngày phục vụ 60% khách hàng.", "Owned P&L, training, and vendor relationships — a full service business, not just a repair bench.": "Phụ trách P&L, đào tạo, và quan hệ nhà cung cấp — một mảng dịch vụ trọn vẹn, không chỉ là bàn sửa chữa.", "Led end-to-end service performance (revenue, NPS, operations) for a 30+ person team; District Specialty Coach across MN/SD/ND.": "Chịu trách nhiệm hiệu quả dịch vụ đầu-cuối (doanh thu, NPS, vận hành) cho đội hơn 30 người; District Specialty Coach phụ trách khu vực MN/SD/ND.", "Diagnosed and repaired macOS and Windows systems; supported iOS, Android, and Windows users daily — whatever came through the door.": "Chẩn đoán và sửa chữa hệ thống macOS và Windows; hỗ trợ người dùng iOS, Android và Windows mỗi ngày — bất kể thứ gì được mang đến.", "Consumer support is unmitigated chaos. Thriving in it is why nothing in enterprise rattles me.": "Hỗ trợ người tiêu dùng là sự hỗn loạn không khoan nhượng. Trụ vững được ở đó là lý do không điều gì trong môi trường doanh nghiệp khiến tôi nao núng.", "Multi-unit retail leadership: certified incoming managers at a designated training store, owned inventory control with district-leading shrink, and carried top-line revenue and P&L.": "Lãnh đạo bán lẻ nhiều cửa hàng: đào tạo và cấp chứng nhận cho quản lý mới tại một cửa hàng đào tạo chỉ định, phụ trách kiểm soát tồn kho với tỷ lệ thất thoát dẫn đầu khu vực, và gánh vác doanh thu cùng P&L.", "Ran print & design services at OfficeMax — the origin of design and communication instincts I still use today.": "Điều hành dịch vụ in ấn & thiết kế tại OfficeMax — khởi nguồn của những bản năng thiết kế và truyền đạt mà tôi vẫn dùng đến hôm nay.", "This is where business fluency and people development came from, long before the servers did.": "Đây là nơi khả năng am hiểu kinh doanh và phát triển con người hình thành, từ rất lâu trước khi có máy chủ.", "A decade running a Service Desk": "Một thập kỷ điều hành Bộ phận Hỗ trợ", "Every decision served employees directly.": "Mọi quyết định đều phục vụ trực tiếp nhân viên.", "Consumer support at volume": "Hỗ trợ người tiêu dùng ở quy mô lớn", "Geek Squad & Micro Center — pure chaos.": "Geek Squad & Micro Center — hỗn loạn thuần túy.", "Retail leadership & P&L": "Lãnh đạo bán lẻ & P&L", "Building MDM from zero": "Xây dựng MDM từ con số không", "No playbook, no precedent, no SME.": "Không có cẩm nang, không tiền lệ, không chuyên gia.", "Self-teaching since GeoCities": "Tự học từ thời GeoCities", "24/7 major incident command": "Chỉ huy sự cố lớn 24/7", "High-stakes, high-pressure, on call.": "Rủi ro cao, áp lực cao, trực sẵn sàng.", "Print & design bench": "Mảng in ấn & thiết kế", "OfficeMax design center + MySpace era.": "Trung tâm thiết kế OfficeMax + thời MySpace.", "Small-business consulting": "Tư vấn cho doanh nghiệp nhỏ", "Community brand, systems & security.": "Thương hiệu cộng đồng, hệ thống & bảo mật.", "End-user advocacy": "Bênh vực người dùng cuối", "I design for the person, not the console — because I've spent a career on their side of the counter.": "Tôi thiết kế cho con người, không phải cho bảng điều khiển — vì tôi đã dành cả sự nghiệp đứng ở phía họ.", "Grace under pressure": "Điềm tĩnh dưới áp lực", "Nothing enterprise throws at me compares to a consumer holiday rush or a P1 at 3 a.m.": "Không thử thách nào ở môi trường doanh nghiệp sánh được với cao điểm mua sắm dịp lễ hay một sự cố P1 lúc 3 giờ sáng.", "Realistic engineering expectations": "Kỳ vọng kỹ thuật thực tế", "Having built and broken systems myself, I know what dev time and troubleshooting actually take.": "Từng tự tay xây và làm hỏng hệ thống, tôi hiểu thời gian phát triển và xử lý sự cố thực sự cần bao nhiêu.", "Build-from-zero instinct": "Bản năng xây từ số không", "Give me a blank page and no map. That's been my favorite place to work since I was a teenager.": "Hãy đưa tôi một trang giấy trắng và không bản đồ. Đó là nơi tôi thích làm việc nhất từ thời niên thiếu.", "Business & operational fluency": "Am hiểu kinh doanh & vận hành", "P&L, vendors, procurement, carriers — I read a technology decision as a business decision too.": "P&L, nhà cung cấp, mua sắm, nhà mạng — tôi đọc một quyết định công nghệ đồng thời như một quyết định kinh doanh.", "Design & communication sense": "Cảm quan thiết kế & truyền đạt", "I can make the complex simple on a page or a screen — a skill that started with print and personal sites.": "Tôi có thể biến điều phức tạp thành đơn giản trên trang giấy hay màn hình — một kỹ năng bắt đầu từ in ấn và những trang web cá nhân.", "Systems thinking & integration": "Tư duy hệ thống & tích hợp", "MDM, identity, carriers, POS, delivery — I connect moving parts into one coherent experience.": "MDM, danh tính, nhà mạng, POS, giao hàng — tôi kết nối các mảnh rời rạc thành một trải nghiệm mạch lạc.", "Being of service": "Tinh thần phục vụ", "If a skill I have can help someone, I use it. That instinct shows up in every role I've held.": "Nếu một kỹ năng của tôi có thể giúp ai đó, tôi sẽ dùng nó. Bản năng ấy hiện diện trong mọi vai trò tôi từng đảm nhận.", "Apple & Mobility": "Apple & Di động", "Endpoint & Identity": "Thiết bị đầu cuối & Danh tính", "Operations & Process": "Vận hành & Quy trình", "Foundations & Human": "Nền tảng & Con người", "Online identity & profiles": "Danh tính trực tuyến & hồ sơ", "Brand and listing management across Google Business Profile and Apple Business Connect — plus review management and response.": "Quản lý thương hiệu và thông tin niêm yết trên Google Business Profile và Apple Business Connect — cùng việc quản lý và phản hồi đánh giá.", "Menu design & print": "Thiết kế & in menu", "Designed and printed the restaurant's menu end to end — layout, typography, and production.": "Thiết kế và in menu của nhà hàng từ đầu đến cuối — bố cục, kiểu chữ và khâu in ấn.", "See the menu": "Xem menu", "Interior design (on a budget)": "Thiết kế nội thất (trong ngân sách hạn hẹp)", "Helped shape a space worth sharing — because a room people photograph is free, long-term marketing.": "Góp phần tạo nên một không gian đáng để chia sẻ — vì một căn phòng khiến người ta muốn chụp ảnh chính là quảng cáo miễn phí, lâu dài.", "See the space": "Xem không gian", "Systems & integration": "Hệ thống & tích hợp", "Tied POS (Toast, Shift4, Square) to online ordering and delivery (DoorDash, Uber Eats, Grubhub), including menu sync.": "Kết nối POS (Toast, Shift4, Square) với đặt hàng và giao hàng trực tuyến (DoorDash, Uber Eats, Grubhub), bao gồm đồng bộ menu.", "See the journey": "Xem hành trình", "Website, social & content": "Website, mạng xã hội & nội dung", "I didn't build the site, but I keep it alive — refining content, refreshing photos, and making the changes their provider allows but they aren't comfortable doing themselves. I also run their social presence, design promotional images, and use AI to help generate and automate content.": "Tôi không xây dựng trang web, nhưng tôi duy trì nó — tinh chỉnh nội dung, làm mới hình ảnh, và thực hiện những thay đổi mà nhà cung cấp cho phép nhưng họ chưa đủ tự tin để tự làm. Tôi cũng phụ trách hiện diện mạng xã hội, thiết kế hình ảnh quảng bá, và dùng AI để hỗ trợ tạo và tự động hóa nội dung.", "Security & separation": "Bảo mật & tách biệt", "Separating work and personal systems so the business can scale without rebuilding — and so access can be shared safely, without risking anyone's personal accounts.": "Tách biệt hệ thống công việc và cá nhân để doanh nghiệp có thể mở rộng mà không phải xây lại — và để chia sẻ quyền truy cập an toàn, không gây rủi ro cho tài khoản cá nhân của bất kỳ ai.", "See before & after": "Xem trước & sau", "In progress": "Đang thực hiện"};
+function L(t){var v=VI[t];return v?('<span data-lang="en">'+t+'</span><span data-lang="vi">'+v+'</span>'):t;}
 /* ---------------- RENDER ---------------- */
 const el = (h)=>{const t=document.createElement('template');t.innerHTML=h.trim();return t.content.firstChild;};
 
@@ -748,11 +758,11 @@ experience.forEach((r,i)=>{
   const item = el(`<div class="xp-item">
     <button class="xp-head" aria-expanded="false" aria-controls="xpb${i}">
       <span class="xp-date">${r.date}</span>
-      <span><span class="xp-title">${r.title}</span><span class="xp-org">${r.org} <span class="loc">${r.loc}</span></span></span>
+      <span><span class="xp-title">${L(r.title)}</span><span class="xp-org">${r.org} <span class="loc">${r.loc}</span></span></span>
       <span class="xp-plus">+</span>
     </button>
     <div class="xp-body" id="xpb${i}"><div class="xp-body-inner"><div class="spacer"></div><div>
-      <ul>${r.bullets.map(b=>`<li>${b}</li>`).join('')}</ul>
+      <ul>${r.bullets.map(b=>`<li>${L(b)}</li>`).join('')}</ul>
       <div class="xp-tags">${r.tags.map(t=>`<span>${t}</span>`).join('')}</div>
     </div></div></div>
   </div>`);
@@ -770,14 +780,14 @@ const rootsWrap=document.getElementById('connRoots'), capsWrap=document.getEleme
 const clearBtn=document.getElementById('connClear');
 let activeRoot=null, activeCap=null;
 roots.forEach(r=>{
-  const b=el(`<button class="root" data-key="${r.key}"><span class="rt">${r.t}</span><span class="rd">${r.d}</span></button>`);
+  const b=el(`<button class="root" data-key="${r.key}"><span class="rt">${L(r.t)}</span><span class="rd">${L(r.d)}</span></button>`);
   b.addEventListener('click',()=>selectRoot(r.key));
   rootsWrap.appendChild(b);
 });
 caps.forEach((c,i)=>{
   const label = c.roots.map(k=>roots.find(r=>r.key===k)?.t.replace(/^A |^Building |^Consumer /,'')).slice(0,3).join(' · ');
   const card=el(`<div class="cap" data-roots="${c.roots.join(',')}" data-i="${i}">
-    <h4>${c.t}</h4><p>${c.d}</p><div class="from">↖ from: ${label}</div></div>`);
+    <h4>${L(c.t)}</h4><p>${L(c.d)}</p><div class="from">↖ from: ${label}</div></div>`);
   card.addEventListener('click',()=>selectCap(i));
   capsWrap.appendChild(card);
 });
@@ -809,7 +819,7 @@ clearBtn.addEventListener('click',reset);
 // skills
 const skillsWrap=document.getElementById('skills');
 skills.forEach(s=>{
-  skillsWrap.appendChild(el(`<div class="skill-cat"><div class="ct">${s.c}</div><div class="chips">${s.items.map(i=>`<span class="chip">${i}</span>`).join('')}</div></div>`));
+  skillsWrap.appendChild(el(`<div class="skill-cat"><div class="ct">${L(s.c)}</div><div class="chips">${s.items.map(i=>`<span class="chip">${i}</span>`).join('')}</div></div>`));
 });
 
 // certs
@@ -819,10 +829,10 @@ const modal=document.getElementById('modal'), modalFrame=document.getElementById
       modalClose=document.getElementById('modalClose');
 certs.forEach(c=>{
   if(c.inprog){
-    certGrid.appendChild(el(`<div class="cert inprog"><span class="badge">${c.badge}</span><span class="cn">${c.name}</span><span class="cmeta">${c.meta}</span></div>`));
+    certGrid.appendChild(el(`<div class="cert inprog"><span class="badge">${L(c.badge)}</span><span class="cn">${c.name}</span><span class="cmeta">${L(c.meta)}</span></div>`));
     return;
   }
-  const card=el(`<button class="cert"><span class="badge">${c.badge}</span><span class="cn">${c.name}</span><span class="cmeta">${c.meta}</span><span class="view">◱ view certificate</span></button>`);
+  const card=el(`<button class="cert"><span class="badge">${L(c.badge)}</span><span class="cn">${c.name}</span><span class="cmeta">${L(c.meta)}</span><span class="view"><span data-lang="en">◱ view certificate</span><span data-lang="vi">◱ xem chứng chỉ</span></span></button>`);
   card.addEventListener('click',()=>openCert(c));
   certGrid.appendChild(card);
 });
@@ -854,17 +864,17 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeCert();closeSe
 // community
 const commGrid=document.getElementById('commGrid');
 function linkChip(l){
-  if(l.href==='#') return `<span class="lk lk-muted">${l.label}</span>`;
+  if(l.href==='#') return `<span class="lk lk-muted">${L(l.label)}</span>`;
   const ext = l.href.startsWith('http') ? 'target="_blank" rel="noopener"' : '';
-  return `<a class="lk" href="${l.href}" ${ext}>${l.label} ↗</a>`;
+  return `<a class="lk" href="${l.href}" ${ext}>${L(l.label)} ↗</a>`;
 }
 community.forEach(c=>{
   const foot = c.modal
-    ? `<div class="lk-row"><button class="lk lk-btn" type="button">${c.modalLabel} →</button></div>`
+    ? `<div class="lk-row"><button class="lk lk-btn" type="button">${L(c.modalLabel)} →</button></div>`
     : `<div class="lk-row">${(c.links||[]).map(linkChip).join('')}</div>`;
   const card = el(`<div class="comm-card">
     <div class="media"><div class="ph-label">${c.ph}</div><img src="${c.img}" alt="${c.h}" onerror="this.style.display='none'"></div>
-    <div class="comm-body"><h4>${c.h}</h4><p>${c.p}</p>${foot}</div></div>`);
+    <div class="comm-body"><h4>${L(c.h)}</h4><p>${L(c.p)}</p>${foot}</div></div>`);
   if(c.modal){ const fn={security:openSecurity,systems:openSystems}[c.modal]; if(fn) card.querySelector('.lk-btn').addEventListener('click',fn); }
   commGrid.appendChild(card);
 });
@@ -909,6 +919,7 @@ document.getElementById('retroExit').addEventListener('click',()=>{document.body
 // friendly console note
 console.log('%cHi, view-source friend. 👋','color:#0a6cff;font:600 16px system-ui');
 console.log('%cI taught myself this stuff on GeoCities. Try the Konami code: ↑↑↓↓←→←→ B A','color:#6b7078;font:13px monospace');
+(function(){var root=document.documentElement;root.setAttribute('data-ui-lang','en');var t=document.getElementById('langTog');if(t){t.addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;var lang=b.getAttribute('data-lang-set');root.setAttribute('data-ui-lang',lang);t.querySelectorAll('button').forEach(function(x){x.classList.toggle('on',x===b);});root.setAttribute('lang',lang);});}})();
 </script>
 </body>
 </html>test
